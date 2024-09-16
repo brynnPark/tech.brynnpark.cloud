@@ -1,11 +1,10 @@
+/* src/App.css */
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 /* General Styles */
 html, body {
   margin: 0;
-  align-items: center;
   padding: 0;
-  font-family: sans-serif;
   background: #fdf2f4;
 }
 
@@ -13,12 +12,6 @@ html, body {
 ::selection {
   background-color: #fbb2c1; /* Background color when selected */
   color: #ffffff; /* Text color when selected */
-}
-
-/* Change the selection color for text inside specific elements (e.g., .custom-header) */
-.custom-header::selection {
-  background-color: #ffcc00; /* Example custom background color */
-  color: #000000; /* Example custom text color */
 }
 
 /* Layout Styles */
@@ -30,109 +23,90 @@ html, body {
 
 /* Visit web page link (top right) */
 .visit-web-page {
-  text-align: right; /* Align the link to the right */
-  margin-bottom: 80px; /* Add some space below the link */
+  text-align: right; 
+  margin-bottom: 80px;
   margin-top: -40px;
-  position: relative; /* Ensure proper positioning */
 }
 
 /* Fancy Button Styles */
 .visit-web-page a {
-  display: inline-flex; /* Use flexbox to center icon and text */
-  align-items: center; /* Vertically align icon and text */
-  color: #ffffff; /* Text color */
-  background: linear-gradient(45deg, #f8879e, #ffafc2); /* Gradient background */
-  padding: 8px 20px; /* Padding around the link */
-  border-radius: 30px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  font-size: 0.9em; /* Slightly larger font */
-  font-weight: bold; /* Bold text */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+  background: linear-gradient(45deg, #f8879e, #ffafc2);
+  padding: 8px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Add an icon before the text */
-.visit-web-page a::before {
-  content: "🌐"; /* Insert globe icon */
-  margin-right: 5px; /* Space between icon and text */
-  font-size: 1em; /* Adjust icon size */
-}
-
-/* Add an icon after the text */
+.visit-web-page a::before,
 .visit-web-page a::after {
-  content: "🌐"; /* Insert globe icon */
-  margin-left: 5px; /* Space between icon and text */
-  font-size: 1em; /* Adjust icon size */
+  content: "🌐";
+  font-size: 1em;
 }
 
-/* Hover and Active Effects */
 .visit-web-page a:hover {
-  transform: translateY(-3px); /* Move up slightly on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .visit-web-page a:active {
-  transform: translateY(0); /* Reset position on click */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Blog title container */
 .blog-title-container {
-  display: flex; /* Use flexbox to align items */
-  align-items: center; /* Vertically center items */
-  justify-content: center; /* Center content horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 3em;
-  margin-top: -60px;
-  position: relative; /* Relative positioning for the speech bubble */
 }
 
 /* Blog title image */
 .blog-title-image {
-  width: 150px; /* Adjust the width as needed */
-  height: 150px; /* Adjust the height as needed */
-  object-fit: cover; /* Ensure the image maintains aspect ratio */
-  position: relative; /* Use position relative */
-  margin-right: 15px; /* Space between the image and the bubble */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
 }
 
 /* Speech bubble styling */
 .speech-bubble {
+  background: transparent;
+  color: #f8879e;
+  padding: 20px;
+  border: 3px solid #f8879e;
+  border-radius: 15px;
+  font-size: 2em;
+  font-weight: bold;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
-  background: transparent; /* Remove background color */
-  color: #f8879e; /* Color for the text to match the design */
-  padding: 20px; /* Padding inside the bubble */
-  border: 3px solid #f8879e; /* Border color and size */
-  border-radius: 15px; /* Rounded corners */
-  font-size: 2em; /* Make the text larger */
-  font-weight: bold; /* Make the text bold */
-  font-family: 'Silkscreen', cursive;
-  max-width: 600px; /* Maximum width of the bubble */
-  text-align: center; /* Center the text inside the bubble */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for style */
+  font-family: 'Silkscreen';
 }
 
-/* The triangle part of the speech bubble */
 .speech-bubble::after {
   content: '';
   position: absolute;
-  top: 50%; /* Adjust the vertical position of the triangle */
-  left: -20px; /* Position the triangle on the left side */
-  transform: translateY(-50%); /* Center the triangle vertically */
-  border-width: 10px; /* Size of the triangle */
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  border-width: 10px;
   border-style: solid;
-  border-color: transparent #f8879e transparent transparent; /* Color of the triangle border */
-}
-
-/* Adjust title text */
-.blog-title {
-  display: none; /* Hide original blog title text if not needed */
+  border-color: transparent #f8879e transparent transparent;
 }
 
 /* Posts Container */
 .posts-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5em; /* Space between post cards */
+  gap: 1.5em;
 }
 
 /* Post Card Styling */
@@ -158,105 +132,7 @@ html, body {
   color: #888;
   font-size: 0.9em;
   margin-bottom: 0.8em;
-  text-align: left; /* Align the date to the left */
-}
-
-
-/* Section Separator */
-.section {
-  padding-top: 2em;
-}
-
-/* Header Section */
-.header {
-  font-size: 2em; /* Increase the font size */
-  font-weight: bold; /* Optional: Make the text bold */
-  line-height: 1; /* Adjust line height */
-  width: 100%;
-  margin: 0 0 20px 15px; /* Remove top margin, only bottom margin remains */
-}
-
-.page-title {
-  font-size: 2em; /* Increase the font size */
-  font-weight: bold; /* Optional: Make the text bold */
-  line-height: 1; /* Adjust line height */
-}
-
-/* Main Content Layout */
-.main-content {
-  justify-content: space-between;
-  margin-top: 2em;
-  width: 100%;
-}
-
-/* General Code-Like Styling */
-.code-block {
-  font-family: 'Arial', sans-serif; /* Code-like font */
-  padding: 5px 8px; /* Padding around the text */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 0.9em; /* Slightly smaller font size */
-  display: inline-block; /* Ensure each block behaves like a code snippet */
-  margin-right: 0; /* Small margin between code blocks */
-  font-weight: bold; /* Make bold */
-}
-
-/* Skill Blocks Container */
-.skills {
-  display: flex; /* Align skill blocks horizontally */
-  flex-wrap: wrap; /* Allow skill blocks to wrap to the next line if needed */
-  gap: 10px; /* Space between skill blocks */
-  margin-top: 10px; /* Space above the skill blocks */
-}
-
-/* Individual Skill Block */
-.skill-block {
-  background-color: #fdf2f4; /* Light background color */
-  color: #333; /* Text color */
-  padding: 4px 9px; /* Padding inside the block */
-  border: 2px solid #f9bac6; /* Border around the block */
-  border-radius: 9px; /* Rounded corners */
-  font-size: 0.9em; /* Slightly smaller font size */
-  font-weight: 500; /* Medium weight for text */
-}
-
-/* Hover Effects */
-.link-to-page a {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  color: #000;
-  font-weight: bold; /* Make links bold */
-  border: 2px solid #fcb6c4; /* Add border to links */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.link-to-page a:hover {
-  background-color: #fcb6c4; /* Light pink color */
-  color: #fff;
-  margin-left: -55px; /* Remove left margin */
-}
-
-/* Section Titles */
-h2, h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-/* Blog Page Styles */
-.blog-page {
-  padding: 2em;
-  background-color: #fdf2f4; /* Matching the existing background */
-  color: #333; 
-}
-
-.blog-page h1 {
-  text-align: center;
-  margin-bottom: 1.5em;
-  margin-top: -20px; /* Move the heading upwards */
-  font-size: 2.5em;
-  color: #4a4a4a;
-  font-weight: bold;
+  text-align: left;
 }
 
 /* Tag Styling */
@@ -267,11 +143,9 @@ h2, h3 {
 .tag {
   display: inline-block;
   background-color: #feb0c0;
-  color: #ffffff; 
+  color: #ffffff;
   padding: 0.3em 0.8em;
   margin-right: 0.5em;
-  margin-bottom: 10px;
-  border: 1px solid #feb0c0;
   border-radius: 10px;
   font-size: 0.85em;
   font-weight: bold;
@@ -279,87 +153,14 @@ h2, h3 {
 
 /* Link Styling */
 .post-card a {
-  color: #f77791; /* Matching the pink highlight color */
+  color: #f77791;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .post-card a:hover {
-  color: #ffafc2; /* Slightly darker pink on hover */
+  color: #ffafc2;
   text-decoration: underline;
-}
-
-
-/* posting css */
-.blog-post {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.blog-post h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-  text-align: center;
-  color: #333;
-}
-
-.blog-post .post-content {
-  line-height: 1.6;
-  color: #4a4a4a;
-}
-
-.blog-post .post-content h3 {
-  font-size: 1.5em;
-  margin-top: 1.5em;
-  color: #333;
-}
-
-.blog-post .post-content ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-.blog-post .post-content ul li {
-  margin-bottom: 10px;
-}
-
-.blog-post .post-content p {
-  margin-bottom: 1em;
-}
-
-/* Blog Title */
-.blog-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 1em;
-  color: #333;
-  font-weight: bold;
-}
-
-/* Posts Container */
-.posts-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em; /* Space between post cards */
-}
-
-
-/* Post Tags */
-.post-tags {
-  margin-bottom: 1em;
-}
-
-.post-tags .tag {
-  display: inline-block;
-  background-color: #feb0c0;
-  color: #ffffff;
-  padding: 0.3em 0.8em;
-  margin-right: 0.5em;
-  border-radius: 10px;
-  font-size: 0.85em;
-  font-weight: bold;
 }
 
 /* Post Excerpt */
@@ -372,6 +173,6 @@ h2, h3 {
 /* Responsive Design */
 @media (max-width: 768px) {
   .visit-web-page {
-      text-align: center; /* Center the link on smaller screens */
+    text-align: center;
   }
 }

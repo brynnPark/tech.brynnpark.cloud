@@ -20,7 +20,7 @@ function TechBlogPost() {
     <PostLayout 
       title={post.title}
       date={post.date}
-      tags={post.tags} // Pass 'tags' prop here
+      tags={post.tags}
       content={post.content}
     />
   );

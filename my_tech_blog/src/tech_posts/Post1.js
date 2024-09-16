@@ -1,6 +1,5 @@
 // src/tech_posts/Post1.js
 import React from 'react';
-import PostLayout from '../components/PostLayout'; 
 
 const Post1 = {
   id: 1,
