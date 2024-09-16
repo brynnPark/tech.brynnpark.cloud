@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 /* General Styles */
 html, body {
   margin: 0;
@@ -21,10 +23,144 @@ html, body {
 
 /* Layout Styles */
 .App {
-  max-width: 930px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 120px;
+  padding: 50px;
 }
+
+/* Visit web page link (top right) */
+.visit-web-page {
+  text-align: right; /* Align the link to the right */
+  margin-bottom: 80px; /* Add some space below the link */
+  margin-top: -40px;
+  position: relative; /* Ensure proper positioning */
+}
+
+/* Fancy Button Styles */
+.visit-web-page a {
+  display: inline-flex; /* Use flexbox to center icon and text */
+  align-items: center; /* Vertically align icon and text */
+  color: #ffffff; /* Text color */
+  background: linear-gradient(45deg, #f8879e, #ffafc2); /* Gradient background */
+  padding: 8px 20px; /* Padding around the link */
+  border-radius: 30px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 0.9em; /* Slightly larger font */
+  font-weight: bold; /* Bold text */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Add an icon before the text */
+.visit-web-page a::before {
+  content: "🌐"; /* Insert globe icon */
+  margin-right: 5px; /* Space between icon and text */
+  font-size: 1em; /* Adjust icon size */
+}
+
+/* Add an icon after the text */
+.visit-web-page a::after {
+  content: "🌐"; /* Insert globe icon */
+  margin-left: 5px; /* Space between icon and text */
+  font-size: 1em; /* Adjust icon size */
+}
+
+/* Hover and Active Effects */
+.visit-web-page a:hover {
+  transform: translateY(-3px); /* Move up slightly on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.visit-web-page a:active {
+  transform: translateY(0); /* Reset position on click */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}
+
+/* Blog title container */
+.blog-title-container {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Center content horizontally */
+  margin-bottom: 3em;
+  margin-top: -60px;
+  position: relative; /* Relative positioning for the speech bubble */
+}
+
+/* Blog title image */
+.blog-title-image {
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  object-fit: cover; /* Ensure the image maintains aspect ratio */
+  position: relative; /* Use position relative */
+  margin-right: 15px; /* Space between the image and the bubble */
+}
+
+/* Speech bubble styling */
+.speech-bubble {
+  position: relative;
+  background: transparent; /* Remove background color */
+  color: #f8879e; /* Color for the text to match the design */
+  padding: 20px; /* Padding inside the bubble */
+  border: 3px solid #f8879e; /* Border color and size */
+  border-radius: 15px; /* Rounded corners */
+  font-size: 2em; /* Make the text larger */
+  font-weight: bold; /* Make the text bold */
+  font-family: 'Silkscreen', cursive;
+  max-width: 600px; /* Maximum width of the bubble */
+  text-align: center; /* Center the text inside the bubble */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for style */
+}
+
+/* The triangle part of the speech bubble */
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%; /* Adjust the vertical position of the triangle */
+  left: -20px; /* Position the triangle on the left side */
+  transform: translateY(-50%); /* Center the triangle vertically */
+  border-width: 10px; /* Size of the triangle */
+  border-style: solid;
+  border-color: transparent #f8879e transparent transparent; /* Color of the triangle border */
+}
+
+/* Adjust title text */
+.blog-title {
+  display: none; /* Hide original blog title text if not needed */
+}
+
+/* Posts Container */
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em; /* Space between post cards */
+}
+
+/* Post Card Styling */
+.post-card {
+  background: #ffffff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  box-shadow: 0 5px 10px #f77791;
+}
+
+.post-card h2 {
+  font-size: 1.5em;
+  margin-bottom: -2px;
+  color: #f77791;
+}
+
+.post-date {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 0.8em;
+  text-align: left; /* Align the date to the left */
+}
+
 
 /* Section Separator */
 .section {
@@ -123,37 +259,6 @@ h2, h3 {
   font-weight: bold;
 }
 
-/* Post Card Styling */
-.posts-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-}
-
-.post-card {
-  background: #ffffff;
-  padding: 1.5em;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
-.post-card:hover {
-  box-shadow: 0 5px 10px #f77791;
-}
-
-.post-card h2 {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-  color: #f77791; /* Matching the pink highlight color */
-}
-
-.post-card .post-date {
-  color: #888;
-  font-size: 0.9em;
-  margin-bottom: 0.5em;
-}
-
 /* Tag Styling */
 .post-tags {
   margin: 0.5em 0;
@@ -184,22 +289,6 @@ h2, h3 {
   text-decoration: underline;
 }
 
-/* Add this to your CSS file */
-.top-left-link {
-  position: absolute;
-  top: 20px; /* Adjust top margin */
-  left: 20px; /* Adjust left margin */
-  font-size: 1.2em; /* Adjust font size */
-}
-
-.top-left-link a {
-  color: #007bff; /* Adjust link color */
-  text-decoration: none; /* Remove underline */
-}
-
-.top-left-link a:hover {
-  text-decoration: underline; /* Add underline on hover */
-}
 
 /* posting css */
 .blog-post {
@@ -240,18 +329,49 @@ h2, h3 {
   margin-bottom: 1em;
 }
 
-.top-left-link {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 1.2em;
+/* Blog Title */
+.blog-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  color: #333;
+  font-weight: bold;
 }
 
-.top-left-link a {
-  color: #007bff;
-  text-decoration: none;
+/* Posts Container */
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em; /* Space between post cards */
 }
 
-.top-left-link a:hover {
-  text-decoration: underline;
+
+/* Post Tags */
+.post-tags {
+  margin-bottom: 1em;
+}
+
+.post-tags .tag {
+  display: inline-block;
+  background-color: #feb0c0;
+  color: #ffffff;
+  padding: 0.3em 0.8em;
+  margin-right: 0.5em;
+  border-radius: 10px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+/* Post Excerpt */
+.post-excerpt {
+  color: #4a4a4a;
+  margin-top: 1em;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .visit-web-page {
+      text-align: center; /* Center the link on smaller screens */
+  }
 }

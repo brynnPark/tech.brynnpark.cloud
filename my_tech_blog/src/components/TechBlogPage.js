@@ -10,12 +10,25 @@ const posts = [Post1, Post2]; // Combine all imported posts into an array
 function TechBlogPage() {
   return (
     <div className="blog-page">
-      {/* Link to another page on top left */}
-      <div className="top-left-link">
-        <Link to="/">← Back to Home</Link> {/* Adjust the path as needed */}
+      {/* Link to external webpage on the top right */}
+      <div className="visit-web-page">
+        <a href="https://brynnpark.cloud" target="_blank" rel="noopener noreferrer">
+          Visit My Page
+        </a>
       </div>
 
-      <h1>Brynn Park's Tech Blog</h1>
+      {/* Blog title and image container */}
+      <div className="blog-title-container">
+        <img 
+          src={`${process.env.PUBLIC_URL}/mimoji-laptop.png`}
+          alt="Blog Logo" 
+          className="blog-title-image"
+        />
+        <div className="speech-bubble">
+          Brynn Park's Tech Blog
+        </div>
+      </div>
+      
       <div className="posts-container">
         {posts.map((post) => (
           <div key={post.id} className="post-card">

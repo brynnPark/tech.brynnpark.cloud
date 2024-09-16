@@ -1,27 +1,21 @@
 // src/tech_posts/Post1.js
 import React from 'react';
+import PostLayout from '../components/PostLayout'; 
 
 const Post1 = {
   id: 1,
-  slug: 'cloud-native-overview',
-  title: 'Understanding Cloud-Native Architecture',
+  slug: 'project-design-requirements-analysis',
+  title: '1. 프로젝트 설계 - 요구사항 분석: SRS, 요구사항 명세서',
   date: 'September 15, 2024',
-  tags: ['Cloud', 'Kubernetes', 'Microservices'],
+  tags: ['Project Design', 'Requirements Analysis', 'SRS'],
   excerpt: 'In this post, we explore the basics of cloud-native architecture, including its core components like containers, microservices, and orchestration...',
   content: (
     <div>
+      <h2>개요</h2>
       <p>
-        In this post, we explore the basics of cloud-native architecture, including its core components like containers, microservices, and orchestration. Cloud-native is an approach to building and running applications that exploit the advantages of the cloud computing delivery model.
+        요구사항 분석은 프로젝트 아이디어를 제시한 제가 주도하여 작성한 뒤, 팀원들에게 공유하고 피드백을 받는 방식으로 진행했습니다.
       </p>
-      <h3>Core Components</h3>
-      <ul>
-        <li><strong>Containers:</strong> Containers allow you to package your application along with its dependencies.</li>
-        <li><strong>Microservices:</strong> This architectural style structures an application as a collection of small services.</li>
-        <li><strong>Orchestration:</strong> Tools like Kubernetes manage the deployment, scaling, and operation of application containers.</li>
-      </ul>
-      <p>
-        By adopting a cloud-native architecture, organizations can achieve faster development, greater scalability, and improved resilience.
-      </p>
+      {/* More content */}
     </div>
   ),
 };

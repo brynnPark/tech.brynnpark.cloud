@@ -1,0 +1,107 @@
+/* src/components/PostLayout.css */
+
+/* Post Layout */
+.post-layout {
+    max-width: 850px; /* Reduce the max width to make the content area narrower */
+    margin: 0 auto; /* Center the layout horizontally */
+    margin-top: 60px;
+    padding: 1.5em; /* Padding inside the layout */
+    padding-left: 40px; /* Add more padding to the left */
+    padding-right: 40px; /* Add more padding to the right */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+    background-color: #ffffff; /* Optional: background color to make it stand out */
+    border-radius: 10px; /* Optional: round the corners of the layout */
+}
+
+/* Go Back Button */
+.go-back-button {
+    display: inline-flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Align icon and text vertically */
+    background-color: #fdf2f4; /* Background color */
+    color: #f77791; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 8px 15px; /* Padding for size */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    margin-top: 30px; /* Space below button */
+    position: absolute; /* Absolute positioning */
+    top: 30px; /* Position from the top */
+    left: 140px; /* Position from the left */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.go-back-button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.go-back-button:hover {
+    background-color: #f77791; /* Change color on hover */
+    color: #ffffff;
+}
+
+/* Post Title */
+.post-title {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    color: #000000;
+}
+
+/* Post Date */
+.post-date {
+    text-align: center;
+    color: #888;
+    margin-bottom: 1em;
+}
+
+/* Post Content */
+.post-content {
+    line-height: 1.6;
+    color: #4a4a4a;
+    padding: 0 20px; /* Add padding to the left and right of the content */
+}
+
+/* Post Content Headings */
+.post-content h3 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    color: #333;
+}
+
+/* Post Content Lists */
+.post-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Post Content List Items */
+.post-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Post Content Paragraphs */
+.post-content p {
+    margin-bottom: 1em;
+}
+
+/* Center the tags only in the post detail page */
+.post-detail-tags {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center the tags horizontally */
+    flex-wrap: wrap; /* Wrap tags if they overflow */
+    margin: 1em 0; /* Space above and below the tags */
+    margin-bottom: 5em;
+}
+
+.post-detail-tags .tag {
+    display: inline-block;
+    background-color: #feb0c0; /* Background color for tags */
+    color: #ffffff; /* Text color */
+    padding: 0.3em 0.8em; /* Padding inside the tag */
+    margin: 0.2em; /* Space between tags */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 0.85em; /* Font size */
+    font-weight: bold; /* Bold text */
+}
