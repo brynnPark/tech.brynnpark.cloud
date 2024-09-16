@@ -6,8 +6,3 @@ terraform {
     }
   }
 }
-
-// This block tells Terraform that we're going to provision AWS resources.
-provider "aws" {
-  region = "ap-northeast-2"
-}
