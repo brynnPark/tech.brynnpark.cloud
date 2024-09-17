@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Post1 from '../tech_posts/Post1';
 import Post2 from '../tech_posts/Post2';
@@ -13,7 +13,7 @@ function TechBlogPage() {
   const tagContainerRef = useRef(null); // Reference to the tag container
 
   // Extract all unique tags from posts and include "All" as the first option
-  const allTags = ['All', ...new Set(posts.flatMap((post) => post.tags))];
+  const allTags = useMemo(() => ['All', ...new Set(posts.flatMap((post) => post.tags))], [posts]);
 
   // Filter posts by selected tag, showing all posts if "All" is selected
   const filteredPosts = selectedTag === 'All'
