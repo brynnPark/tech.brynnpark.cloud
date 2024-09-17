@@ -5,7 +5,7 @@ const Post2 = {
   id: 1,
   slug: 'cloud-native-overview',
   title: 'ds',
-  date: 'September 15, 2024',
+  date: 'September, 2024',
   tags: ['Cloud', 'Kubernetes', 'Microservices'],
   excerpt: 'In this post, we explore the basics of cloud-native architecture, including its core components like containers, microservices, and orchestration...',
   content: (

@@ -1,10 +1,10 @@
-// src/components/PostLayout.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import TableOfContents from './TableOfContents'; // Import the TableOfContents component
 import './PostLayout.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-function PostLayout({ title, date, tags, content }) {
+function PostLayout({ title, date, tags, headings, content }) {
   const navigate = useNavigate();
 
   return (
@@ -24,6 +24,9 @@ function PostLayout({ title, date, tags, content }) {
             <span key={index} className="tag">{tag}</span>
           ))}
         </div>
+
+        {/* Table of Contents */}
+        {headings && <TableOfContents headings={headings} />}
 
         <div className="post-content">{content}</div>
       </div>

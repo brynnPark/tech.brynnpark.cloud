@@ -25,7 +25,7 @@ html, body {
 .visit-web-page {
   text-align: right; 
   margin-bottom: 80px;
-  margin-top: -40px;
+  margin-top: -20px;
 }
 
 /* Fancy Button Styles */
@@ -78,9 +78,9 @@ html, body {
 /* Speech bubble styling */
 .speech-bubble {
   background: transparent;
-  color: #f8879e;
+  color: #ff98ad;
   padding: 20px;
-  border: 3px solid #f8879e;
+  border: 3px solid #ffb2c1;
   border-radius: 15px;
   font-size: 2em;
   font-weight: bold;
@@ -99,7 +99,7 @@ html, body {
   transform: translateY(-50%);
   border-width: 10px;
   border-style: solid;
-  border-color: transparent #f8879e transparent transparent;
+  border-color: transparent #ffb2c1 transparent transparent;
 }
 
 /* Posts Container */
@@ -128,12 +128,12 @@ html, body {
   color: #f77791;
 }
 
-.post-date {
+.main-post-date {
   color: #888;
-  font-size: 0.9em;
-  margin-bottom: 0.8em;
-  text-align: left;
+  margin-bottom: 1em;
+  margin-left: 3px;
 }
+
 
 /* Tag Styling */
 .post-tags {
@@ -175,4 +175,135 @@ html, body {
   .visit-web-page {
     text-align: center;
   }
+}
+
+/* TechBlogPage.css */
+
+/* Add styles for the "All" button */
+.tag-filter.all {
+  background-color: #fdf2f4;
+  color: #ff98ad;
+  border: 2px solid #ff98ad;
+}
+
+.tag-filter.all.selected {
+  background-color: #ff98ad;
+  color: #ffffff;
+}
+
+/* Expanded state to show all tags */
+.tag-filter-container.expanded {
+  max-height: 200px; /* Increased height to show multiple lines */
+}
+
+/* "..." indicator container */
+.more-indicator {
+  display: none; /* Hidden by default */
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+  color: #f77791; /* Match the color tone */
+  font-size: 1.2em; /* Adjust size as needed */
+}
+
+/* Show "..." indicator when the container is not expanded */
+.tag-filter-container.overflowing + .more-indicator {
+  display: block; /* Show when collapsed and overflowing */
+}
+
+/* Tag filter button */
+.tag-filter {
+  background-color: #fdf2f4;
+  color: #f77791;
+  border: 2px solid #ff98ad;
+  border-radius: 20px;
+  padding: 8px 15px; /* Increase padding for larger buttons */
+  font-size: 0.8em; /* Increase font size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tag-filter:hover {
+  background-color: #ff98ad;
+  color: #ffffff;
+}
+
+.tag-filter.selected {
+  background-color: #ff98ad;
+  color: #ffffff;
+}
+
+
+/* Tag Filter Container */
+.tag-filter-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow tags to wrap to the next line */
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px; /* Adjust spacing to make room for the "Show More" button */
+  max-height: 40px; /* Adjust to the height that fits only one line of tags */
+  overflow: hidden; /* Hide overflow for initial view */
+  transition: max-height 0.3s ease;
+  position: relative; /* To position the "..." indicator */
+}
+
+/* "..." indicator container */
+.more-indicator {
+  display: none; /* Hidden by default */
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+  color: #ff98ad; /* Match the color tone */
+  font-size: 1.2em; /* Adjust size as needed */
+}
+
+/* Show "..." indicator when the container is not expanded */
+.tag-filter-container.overflowing + .more-indicator {
+  display: block; /* Show when collapsed and overflowing */
+}
+
+/* Show More Button Container */
+.show-more-button-container {
+  text-align: center; /* Center the button */
+  margin: 20px 0 20px 0; /* Add space above and below the button */
+}
+
+/* Show More Button */
+.show-more-button {
+  background-color: #ff98ad; /* Different background color */
+  color: #ffffff;
+  border: none; /* Remove the border */
+  padding: 8px 20px; /* Decrease padding for a smaller size */
+  font-size: 0.9em; /* Decrease font size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for animation */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Slightly reduce the shadow */
+  position: relative; /* For the speech bubble effect */
+  border-radius: 25px; /* Adjust the corners for the pill shape */
+}
+
+/* Create the speech bubble effect */
+.show-more-button::after {
+  content: "";
+  position: absolute;
+  top: -8px; /* Adjust position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border: 8px solid transparent; /* Decrease the size of the speech bubble arrow */
+  border-bottom-color: #ff98ad; /* Same color as the button */
+  border-top: 0;
+}
+
+.show-more-button:hover {
+  background-color: #ff98ad; /* Slightly darker shade on hover */
+  transform: translateY(-3px); /* Lift the button on hover */
+}
+
+/* Remove shadow on hover */
+.show-more-button:hover::after {
+  border-top-color: #ff98ad; /* Match the button color on hover */
 }

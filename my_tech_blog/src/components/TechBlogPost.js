@@ -1,4 +1,4 @@
-// src/components/TechBlogPost.js
+//src/components/TechBlogPost.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Post1 from '../tech_posts/Post1';
@@ -21,6 +21,7 @@ function TechBlogPost() {
       title={post.title}
       date={post.date}
       tags={post.tags}
+      headings={post.headings || []} // Provide a default empty array
       content={post.content}
     />
   );

@@ -56,7 +56,6 @@
   text-align: center;
   color: #888;
   margin-bottom: 1em;
-  margin-left: 330px;
 }
 
 /* Post Tags */
@@ -82,7 +81,7 @@
 .post-content {
   line-height: 1.6;
   color: #4a4a4a;
-  padding: 0 20px;
+  padding: 20px 50px;
 }
 
 .post-content h2 {
@@ -103,3 +102,62 @@
 .post-content p {
   margin-bottom: 1em;
 }
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  /* list-style-type:circle; Optional: removes the bullet points */
+}
+
+/* Table of Contents */
+.table-of-contents {
+  width: 600px; /* Adjust the width to narrow the table of contents box */
+  margin: 40px auto; /* Center the box horizontally */
+  padding: 40px; /* Adjusted padding */
+  border: 2px solid #fdcbd4; /* Use the same pink shade for the border */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.table-of-contents h2 {
+  margin-top: 0;
+  font-size: 1.5em; /* Size for the "Table of Contents" title */
+  color: #f77791; /* Consistent pink color for headings */
+}
+
+.table-of-contents ul {
+  list-style: none;
+  padding: 5px;
+}
+
+.table-of-contents li {
+  margin-bottom: 5px; /* Add spacing between list items */
+}
+
+.table-of-contents a {
+  text-decoration: none;
+  color: #f77791; /* Pink color for links */
+  transition: color 0.3s ease;
+}
+
+/* Styling for h1 links in Table of Contents */
+.table-of-contents li a[data-level="1"] {
+  font-size: 1em; /* Larger for h1 items */
+  font-weight: bold; /* Make it bold for emphasis */
+}
+
+/* Styling for h2 links in Table of Contents */
+.table-of-contents li a[data-level="2"] {
+  font-size: 0.9em; /* Smaller than h1 items */
+  padding-left: 5px; /* Indent to show hierarchy */
+}
+
+.table-of-contents a:hover {
+  text-decoration: underline;
+  color: #ffafc2; /* Lighter pink on hover */
+}
+
+
