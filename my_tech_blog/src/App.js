@@ -1,11 +1,12 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TechBlogPage from './components/TechBlogPage';
 import TechBlogPost from './components/TechBlogPost';
-import './App.css';
+import './App.css'; // Ensure styles are imported
 
 function App() {
+
   return (
     <Router>
       <div className="App">
@@ -19,3 +20,4 @@ function App() {
 }
 
 export default App;
+

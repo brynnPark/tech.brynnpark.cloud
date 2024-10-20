@@ -39,6 +39,14 @@ const MainContent = () => (
         </ul>
       </li>
     </ul>
+
+    <div class="callout">
+        <div class="callout-icon">💡</div>
+        <div class="callout-text">
+        <strong>Tip:</strong> 회원가입 시 이름과 Email만을 받을 것이기 때문에 옵션을 두 가지 선택하고, preferred user name과 case sensitive 옵션도 체크해준다.
+        </div>
+    </div>
+
     {/* Add more sections as needed */}
   </div>
 );
