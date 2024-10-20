@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TechBlogPage from './components/TechBlogPage';
 import TechBlogPost from './components/TechBlogPost';
