@@ -167,7 +167,6 @@ CommandError: 'login-service' is not a valid project name. Please make sure the 
     
     <img
         src={`${process.env.PUBLIC_URL}/post1/image1.png`}
-        alt="Image 1"
     />
 
     제공해주는 Cognito userpool을 사용할 경우, MAU 50,000명까지 매달 무료로 사용할 수 있기에 Cognito userpool을 사용한다. 
@@ -176,11 +175,10 @@ CommandError: 'login-service' is not a valid project name. Please make sure the 
     <div className="image-container">
         <img
             src={`${process.env.PUBLIC_URL}/post1/image2.png`}
-            alt="Image 2"
         />
         <img
             src={`${process.env.PUBLIC_URL}/post1/image3.png`}
-            alt="Image 3"
+
         />
     </div>
 
@@ -194,20 +192,17 @@ CommandError: 'login-service' is not a valid project name. Please make sure the 
 
     <img
         src={`${process.env.PUBLIC_URL}/post1/image4.png`}
-        alt="Image 4"
     />
     <p>다음 페이지에서 나머지 설정은 기본 그대로 두고, 마지막에 Required attributes에서 추가하고 싶은 값(사용자에게 필수로 받고자 하는 값)만 추가했다.</p>
     
     <img
         src={`${process.env.PUBLIC_URL}/post1/image5.png`}
-        alt="Image 5"
     />
     Send email with Cognito를 선택하면 cognito에서 알아서 이메일을 보내주고 관리해주기 때문에 편하다. 
     이메일 인증을 할 것이기 때문에 편한 방법을 선택했다.
 
     <img
         src={`${process.env.PUBLIC_URL}/post1/image6.png`}
-        alt="Image 6"
     />
     다음 장에서 위의 설정은 모두 그대로 뒀으며, 로그인 페이지의 디자인을 따로 Frontend에서 구현할 것이기 때문에 Hosted UI도 사용하지 않는다. 
 
@@ -216,11 +211,9 @@ CommandError: 'login-service' is not a valid project name. Please make sure the 
     <div className="image-container">
         <img
             src={`${process.env.PUBLIC_URL}/post1/image7.png`}
-            alt="Image 7"
         />
         <img
             src={`${process.env.PUBLIC_URL}/post1/image8.png`}
-            alt="Image 8"
         />
     </div>
     <p>닫혀 있는 Advanced app client setting을 열어서 Authentication Flows를 추가한다. 이 부분은 App client를 생성할 때 중요한 부분이다. 
@@ -229,13 +222,11 @@ CommandError: 'login-service' is not a valid project name. Please make sure the 
     
     <img
         src={`${process.env.PUBLIC_URL}/post1/image9.png`}
-        alt="Image 9"
     />
     모든 과정을 완료하여 성공적으로 user pool이 생성되었다면, 위와 같이 목록에 뜨는 것을 확인할 수 있다.
 
     <img
         src={`${process.env.PUBLIC_URL}/post1/image10.png`}
-        alt="Image 10"
     />
     <p>
         App client로 제대로 생성되어 있는지 확인하기 위해 본 프로젝트를 클릭하여 상세페이지에 들어간다. 
@@ -245,11 +236,9 @@ CommandError: 'login-service' is not a valid project name. Please make sure the 
     <div className="image-container">
         <img
             src={`${process.env.PUBLIC_URL}/post1/image11.png`}
-            alt="Image 11"
         />
         <img
             src={`${process.env.PUBLIC_URL}/post1/image12.png`}
-            alt="Image 12"
         />
     </div>
 
@@ -418,7 +407,6 @@ def confirm_signup_view(request):
     (아래의 경우, 같은 이메일이 두 개인 이유는 하나는 unconfirmed이기 때문에 유효하지 않다고 판단되는 듯)
     <img
         src={`${process.env.PUBLIC_URL}/post1/image13.png`}
-        alt="Image 13"
     />
 
     <inline-code>signin_view</inline-code>
@@ -431,11 +419,9 @@ def confirm_signup_view(request):
     <div className="image-container">
         <img
             src={`${process.env.PUBLIC_URL}/post1/image14.png`}
-            alt="Image 14"
         />
         <img
             src={`${process.env.PUBLIC_URL}/post1/image15.png`}
-            alt="Image 15"
         />
     </div>
     <p>
@@ -466,11 +452,9 @@ def confirm_signup_view(request):
     <div className="image-container">
         <img
             src={`${process.env.PUBLIC_URL}/post1/image16.png`}
-            alt="Image 16"
         />
         <img
             src={`${process.env.PUBLIC_URL}/post1/image17.png`}
-            alt="Image 17"
         />
     </div>
     <p>비밀번호 조건 만족 안 했을 시, 오류가 발생한다. (이메일, 이름 중복 체크 다시 한 번 확인해야 함)</p>
@@ -479,11 +463,9 @@ def confirm_signup_view(request):
     <div className="image-container">
         <img
             src={`${process.env.PUBLIC_URL}/post1/image18.png`}
-            alt="Image 18"
         />
         <img
             src={`${process.env.PUBLIC_URL}/post1/image14.png`}
-            alt="Image 14"
         />
     </div>
     <p>로그인이 성공적으로 되면, JWT를 반환한다.</p>
@@ -492,11 +474,9 @@ def confirm_signup_view(request):
     <div className="image-container">
         <img
             src={`${process.env.PUBLIC_URL}/post1/image19.png`}
-            alt="Image 19"
         />
         <img
             src={`${process.env.PUBLIC_URL}/post1/image20.png`}
-            alt="Image 20"
         />
     </div>
     <p>위와 같이 이메일을 통해 인증 정보를 받고, 인증 정보를 입력하는 페이지를 통해 인증한다.</p>
