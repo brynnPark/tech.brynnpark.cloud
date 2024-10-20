@@ -23,22 +23,6 @@ const TableOfContents = () => (
 // Main Content Component
 const MainContent = () => (
   <div>
-    <h1 id="aws-intro">1 AWS 소개</h1>
-    <h2 id="cloud-computing">Cloud Computing</h2>
-    <ul>
-      <li>인터넷을 통해 연결</li>
-      <li>온디맨드</li>
-      <li>종량제 요금제</li>
-    </ul>
-    <h2 id="global-infrastructure">Global Infrastructure</h2>
-    <ul>
-      <li><strong>AZ(가용 영역)</strong>
-        <ul>
-          <li>하나 이상의 데이터 센터들의 집합</li>
-          <li>데이터 센터는 수천에서 수만 대의 서버의 집합</li>
-        </ul>
-      </li>
-    </ul>
 
     <div class="callout">
         <div class="callout-icon">💡</div>
