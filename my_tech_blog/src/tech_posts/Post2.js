@@ -6,7 +6,7 @@ const Post2 = {
   slug: 'codebuild-container-deployment',
   title: 'CodeBuild and Container Deployment',
   date: 'October, 2024',
-  tags: ['AWS', 'CodeBuild', 'Kubernetes', 'Containers'],
+  tags: ['AWS', 'CodeBuild', 'Kubernetes', 'Containers', 'CodePipeline', 'EKS'],
   excerpt: 'In this post, we explore how to configure AWS CodeBuild and deploy containers using Kubernetes...',
   headings: [
     { id: "CodeBuild", title: "CodeBuild", level: 1 },

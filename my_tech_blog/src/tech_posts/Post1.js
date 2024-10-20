@@ -4,10 +4,10 @@ import React from 'react';
 const Post1 = {
   id: 1,
   slug: 'SignUp-implementation-with-AWS-Cognito',
-  title: 'SignUp/SignIn implementation with AWS Cognito',
-  date: 'June, 2024',
+  title: 'SignUp implementation with AWS Cognito',
+  date: 'Oct, 2024',
   tags: ['AWS', 'Cloud Computing', 'Cognito', 'Django', 'Python'],
-  excerpt: 'Cognito를 이용하여 회원가입을 구현하는 방법을 알아보고자 한다.',
+  excerpt: 'Cognito를 이용하여 회원가입을 구현하는 방법을 알아보고자 한다...',
   headings: [
     { id: '환경-설정', title: '1 환경 설정', level: 1 },
     { id: 'python-설치', title: '1) python 설치', level: 2 },
