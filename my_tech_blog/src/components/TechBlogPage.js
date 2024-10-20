@@ -13,7 +13,7 @@ function TechBlogPage() {
   const tagContainerRef = useRef(null); // Reference to the tag container
 
   // Extract all unique tags from posts and include "All" as the first option
-  const allTags = useMemo(() => ['All', ...new Set(posts.flatMap((post) => post.tags))], [posts]);
+  const allTags = useMemo(() => ['All', ...new Set(posts.flatMap((post) => post.tags))], []);
 
   // Filter posts by selected tag, showing all posts if "All" is selected
   const filteredPosts = selectedTag === 'All'
