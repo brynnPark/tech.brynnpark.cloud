@@ -1,7 +1,5 @@
 // src/tech_posts/Post1.js
 import React from 'react';
-import ImageWithModal from '../components/ImageWithModal'; // Import the generalized ImageWithModal component
-
 
 const Post1 = {
   id: 1,
