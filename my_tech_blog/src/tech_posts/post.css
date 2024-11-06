@@ -85,6 +85,25 @@ pre {
   margin-bottom: 30px;
 } 
 
+/* Target code blocks inside Markdown */
+.markdown-content pre {
+  background-color: #f0f3f6;
+  text-align: left; /* Align text to the left */
+  padding: 1em;
+  margin: 0px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.markdown-content pre code {
+  padding-left: 0;
+  background-color: transparent; /* To ensure only the pre element has the background */
+  font-weight: bold;
+}
+
 inline-code {
   background-color: #f6f8fa;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -95,6 +114,7 @@ inline-code {
   overflow-wrap: break-word;
   padding: 6px;
   white-space: pre-line; /* Preserves whitespace and line breaks */
+  font-weight: bold;
 }
 
 /* Blockquotes */
@@ -108,6 +128,7 @@ blockquote {
   color: #555;
   font-style: italic;
   line-height: 17px; /* Adjust to reduce space between lines */
+  font-weight: bold;
 }
 
 /* Reduce spacing between list items */
