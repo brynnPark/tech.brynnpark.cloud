@@ -3,9 +3,18 @@
 
 /* General Styles */
 html, body {
-  margin: 00px;
+  margin: 0px;
   padding: 10;
   background: #fdf2f4;
+  height: 100%; /* Ensure body takes full viewport height without growing */
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  background: #fdf2f4;
+  overflow-y: auto; /* Only the root should scroll vertically */
+  overflow-x: auto;
 }
 
 /* Change the background and text color when text is selected */

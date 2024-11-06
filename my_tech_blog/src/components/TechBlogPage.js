@@ -1,69 +1,43 @@
+// src/components/TechBlogPage.js
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import Post1 from '../tech_posts/Post1';
-import Post2 from '../tech_posts/Post2';
-// Import more posts as needed...
-
-const posts = [Post1, Post2]; // Combine all imported posts into an array
+import posts from '../tech_posts';
 
 function TechBlogPage() {
   const [selectedTag, setSelectedTag] = useState('All');
   const [showAllTags, setShowAllTags] = useState(false);
-  const [isOverflowing, setIsOverflowing] = useState(false); // Track if tags overflow
-  const tagContainerRef = useRef(null); // Reference to the tag container
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const tagContainerRef = useRef(null);
 
-  // Extract all unique tags from posts and include "All" as the first option
-  const allTags = useMemo(() => ['All', ...new Set(posts.flatMap((post) => post.tags))], []);
+  // Get all unique tags and add "All" as the default option
+  const allTags = useMemo(() => ['All', ...new Set(posts.flatMap(post => post.tags))], []);
+  const filteredPosts = selectedTag === 'All' ? posts : posts.filter(post => post.tags.includes(selectedTag));
 
-  // Filter posts by selected tag, showing all posts if "All" is selected
-  const filteredPosts = selectedTag === 'All'
-    ? posts
-    : posts.filter((post) => post.tags.includes(selectedTag));
-
-  // Toggle "Show More" functionality
-  const toggleShowAllTags = () => {
-    setShowAllTags(!showAllTags);
-  };
-
-  // Check if the tag container overflows
   useEffect(() => {
     if (tagContainerRef.current) {
-      // Check if content overflows more than one line
-      const isOverflown = tagContainerRef.current.scrollHeight > 40;
-      setIsOverflowing(isOverflown);
+      setIsOverflowing(tagContainerRef.current.scrollHeight > 40); // Check if tags overflow
     }
   }, [allTags]);
 
   return (
     <div className="blog-page">
-      {/* Link to external webpage on the top right */}
       <div className="visit-web-page">
-        <a href="https://brynnpark.cloud" target="_blank" rel="noopener noreferrer">
-          Visit My Page
-        </a>
+        <a href="https://brynnpark.cloud" target="_blank" rel="noopener noreferrer">&nbsp; Visit My Page &nbsp;</a>
       </div>
 
-      {/* Blog title and image container */}
       <div className="blog-title-container">
-        <img 
-          src={`${process.env.PUBLIC_URL}/mimoji-laptop.png`}
-          alt="Blog Logo" 
-          className="blog-title-image"
-        />
+        <img src={`${process.env.PUBLIC_URL}/mimoji-laptop.png`} alt="Blog Logo" className="blog-title-image" />
         <div className="speech-bubble">
-          Welcome to <br />Brynn Park's Tech Blog &lt;3
+          Welcome to <br /> Brynn Park's Tech Blog &lt;3
         </div>
       </div>
 
       {/* Tag Filter Section */}
-      <div 
-        className={`tag-filter-container ${showAllTags ? 'expanded' : ''}`}
-        ref={tagContainerRef} // Attach ref to the tag container
-      >
+      <div className={`tag-filter-container ${showAllTags ? 'expanded' : ''}`} ref={tagContainerRef}>
         {allTags.map((tag, index) => (
           <button
             key={index}
-            className={`tag-filter ${tag === 'All' ? 'all' : ''} ${selectedTag === tag ? 'selected' : ''}`}
+            className={`tag-filter ${selectedTag === tag ? 'selected' : ''}`}
             onClick={() => setSelectedTag(tag)}
           >
             {tag}
@@ -71,29 +45,18 @@ function TechBlogPage() {
         ))}
       </div>
 
-      {/* Show "..." indicator when collapsed */}
-      {isOverflowing && !showAllTags && (
-        <div className="more-indicator">
-          ...
-        </div>
-      )}
-
-      {/* Show More Button - Correctly positioned above the posts */}
       {isOverflowing && (
-        <div className="show-more-button-container"> {/* Wrapper for the button */}
-          <button className="show-more-button" onClick={toggleShowAllTags}>
+        <div className="show-more-button-container">
+          <button className="show-more-button" onClick={() => setShowAllTags(!showAllTags)}>
             {showAllTags ? 'Show Less' : 'Show More'}
           </button>
         </div>
       )}
 
-      {/* Posts Container */}
       <div className="posts-container">
-        {filteredPosts.map((post) => (
+        {filteredPosts.map(post => (
           <div key={post.id} className="post-card">
-            <h2>
-              <Link to={`/${post.slug}`}>{post.title}</Link>
-            </h2>
+            <h2><Link to={`/${post.slug}`}>{post.title}</Link></h2>
             <p className="main-post-date"><small>{post.date}</small></p>
             <div className="post-tags">
               {post.tags.map((tag, index) => (

@@ -5,7 +5,7 @@ const Post1 = {
   id: 1,
   slug: 'SignUp-implementation-with-AWS-Cognito',
   title: 'SignUp implementation with AWS Cognito',
-  date: 'Oct, 2024',
+  date: 'October, 2024',
   tags: ['AWS', 'Cloud Computing', 'Cognito', 'Django', 'Python'],
   excerpt: 'Cognito를 이용하여 회원가입을 구현하는 방법을 알아보고자 한다...',
   headings: [
