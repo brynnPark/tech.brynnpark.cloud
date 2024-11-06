@@ -612,8 +612,8 @@ const Post6 = {
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2023',
-  tags: ['AWS', 'Technical Essentials'],
-  excerpt: '이 포스팅은 클라우드 컴퓨팅의 기초적인 요소와 AWS 서비스를 훑어본다. 특히, 서비스를 설계하기 위해 필요한 기초적인 서비스를..',
+  tags: ['Computer Architecuture', 'ISA', 'Computer Science', 'MIPS'],
+  excerpt: '컴퓨터 구조 전공 수업 내용을 바탕으로 정리한 포스팅이다. 컴퓨터 구조의 개요와 시스템의 작동 원리, ISA와 MIPS에 대해서 자세하게 다룬다. ',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };
