@@ -22,6 +22,8 @@ jobs:
         run: find . -type d -name build  # Find where the build directory is created
 
       - name: Build app
+        env:
+          REACT_APP_S3_IMG_URL: ${{ secrets.REACT_APP_S3_IMG_URL }} # Inject the environment variable for the build
         run:  npm run build
         working-directory: my_tech_blog
     
@@ -34,8 +36,6 @@ jobs:
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
-        with: 
-          REACT_APP_S3_IMG_URL: ${{ secrets.REACT_APP_S3_IMG_URL }} # Using the secret in the environment
 
       # Initialize Terraform for the "upload" environment
       - name: Terraform Init
