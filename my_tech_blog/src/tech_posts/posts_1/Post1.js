@@ -367,7 +367,7 @@ const postContent = `
 
 
 const Post1 = {
-  id: 0,
+  id: 1,
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2024',

@@ -533,8 +533,8 @@ const postContent = `
 - 하지만 그만큼 비용은 제일 비쌈
 `;
 
-const Post6 = {
-  id: 6,
+const Post5 = {
+  id: 5,
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2024',
@@ -544,5 +544,5 @@ const Post6 = {
   content: <MarkdownRenderer markdownText={postContent} allowImages /> // Render markdown using the MarkdownRenderer
 };
 
-export default Post6;
+export default Post5;
 

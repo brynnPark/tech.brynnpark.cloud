@@ -535,7 +535,7 @@ const postContent = `
 `;
 
 const Post2 = {
-  id: 4,
+  id: 2,
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2024',
