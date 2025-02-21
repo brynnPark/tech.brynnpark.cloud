@@ -2,10 +2,10 @@
 import React from 'react';
 import MarkdownIt from 'markdown-it';
 import markdownItAttrs from 'markdown-it-attrs';
-import MarkdownRenderer from './utils/MarkdownRenderer';
-import SlugGenerator from './utils/SlugGenerator';
-import HeadingExtractor from './utils/HeadingExtractor';
-import './post.css'
+import MarkdownRenderer from '../utils/MarkdownRenderer';
+import SlugGenerator from '../utils/SlugGenerator';
+import HeadingExtractor from '../utils/HeadingExtractor';
+import '../post.css'
 
 // Initialize markdown-it
 const mdParser = new MarkdownIt({ html: true });
@@ -607,8 +607,8 @@ yes: 유지되어야 하는 값
 `;
 
 
-const Post6 = {
-  id: 6,
+const Post8 = {
+  id: 8,
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2023',
@@ -618,5 +618,5 @@ const Post6 = {
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };
 
-export default Post6;
+export default Post8;
 

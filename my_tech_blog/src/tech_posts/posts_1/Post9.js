@@ -1,4 +1,3 @@
-// src/tech_posts/Post2.js
 import React from 'react';
 import MarkdownIt from 'markdown-it';
 import markdownItAttrs from 'markdown-it-attrs';
@@ -7,21 +6,19 @@ import SlugGenerator from '../utils/SlugGenerator';
 import HeadingExtractor from '../utils/HeadingExtractor';
 import '../post.css'
 
-const imgUrl = `${process.env.REACT_APP_S3_IMG_URL}/post`;
-
 // Initialize markdown-it
 const mdParser = new MarkdownIt({ html: true });
 mdParser.use(markdownItAttrs);
 
-const title = '';
+const title = 'wip';
 
 const postContent = `
 
+
 `;
 
-
-const Post = {
-  id: 0,
+const Post9 = {
+  id: 9,
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2024',
@@ -31,5 +28,5 @@ const Post = {
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };
 
-export default Post;
+export default Post9;
 
