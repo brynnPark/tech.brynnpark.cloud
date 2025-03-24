@@ -18,17 +18,17 @@ const postContent = `
 
 ---
 
-## 🔧 사양
+## 사양
 
 - 노트북 사양: 2코어 4쓰레드 / RAM 16GB  
 - OS: Ubuntu 22.04  
 - 목적: Jenkins, ArgoCD, Istio, Grafana 포함된 MSA 기반 아키텍처 로컬 클러스터 테스트  
 
----
 
-## 1. 시스템 초기 세팅
 
-### 1-1. 필요한 패키지 설치 (기본 패키지 설치)
+# 1. 시스템 초기 세팅
+
+## 1-1. 필요한 패키지 설치 (기본 패키지 설치)
 
 \`\`\`bash
 sudo apt update
@@ -36,7 +36,7 @@ sudo apt install -y curl wget apt-transport-https ca-certificates gnupg \
   conntrack socat ebtables iptables git build-essential pkg-config libseccomp-dev
 \`\`\`
 
-### 1-2. CNI 플러그인 설치 (Pod 네트워킹용)
+## 1-2. CNI 플러그인 설치 (Pod 네트워킹용)
 
 \`\`\`bash
 cd /tmp
@@ -45,11 +45,10 @@ sudo mkdir -p /opt/cni/bin
 sudo tar -C /opt/cni/bin -xzf cni-plugins-linux-amd64-v1.4.0.tgz
 \`\`\`
 
----
 
-## 2. kubectl 및 minikube 설치
+# 2. kubectl 및 minikube 설치
 
-### 2-1. kubectl 설치
+## 2-1. kubectl 설치
 
 \`\`\`bash
 curl -LO "https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl"
@@ -57,18 +56,16 @@ chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 \`\`\`
 
-### 2-2. Minikube 설치
+## 2-2. Minikube 설치
 
 \`\`\`bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 \`\`\`
 
----
+# 3. cri-dockerd 설치 (Kubernetes v1.24+부터 필요)
 
-## 3. cri-dockerd 설치 (Kubernetes v1.24+부터 필요)
-
-### 3-1. Go 1.21 이상 설치
+## 3-1. Go 1.21 이상 설치
 
 \`\`\`bash
 cd /tmp
@@ -78,7 +75,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 source ~/.bashrc
 \`\`\`
 
-### 3-2. cri-dockerd 빌드 및 배포 (Docker runtime shim)
+## 3-2. cri-dockerd 빌드 및 배포 (Docker runtime shim)
 
 \`\`\`bash
 cd ~
@@ -89,7 +86,7 @@ go build -o bin/cri-dockerd
 sudo mv bin/cri-dockerd /usr/local/bin/cri-dockerd
 \`\`\`
 
-### 3-3. cri-dockerd systemd 서비스 등록
+## 3-3. cri-dockerd systemd 서비스 등록
 
 \`\`\`bash
 sudo cp -a packaging/systemd/* /etc/systemd/system/
@@ -100,11 +97,10 @@ sudo systemctl enable --now cri-docker.socket
 sudo systemctl enable --now cri-docker.service
 \`\`\`
 
----
 
-## 4. Minikube 시작
+# 4. Minikube 시작
 
-### 4-1. 권한 에러 방지 설정  
+## 4-1. 권한 에러 방지 설정  
 (Ubuntu 커널 보안 기능 완화, lock 접근 에러 방지)
 
 \`\`\`bash
@@ -112,7 +108,7 @@ sudo sysctl fs.protected_regular=0
 echo "fs.protected_regular=0" | sudo tee -a /etc/sysctl.conf
 \`\`\`
 
-### 4-2. Minikube 클러스터 생성
+## 4-2. Minikube 클러스터 생성
 
 \`\`\`bash
 sudo minikube start --driver=none --memory=2200mb
@@ -122,11 +118,9 @@ sudo minikube start --driver=none --memory=2200mb
 - \`--memory=2200mb\`: 실제 Ubuntu에서 허용된 메모리 크기 제한에 맞춤  
   - \`--driver=none\`에서는 무시될 수 있지만, 최소 메모리 요구 조건 충족을 위해 포함  
 
----
+# 5. 일반 사용자 (\`bohyeon\`)로 쿠버네티스 접근 설정
 
-## 5. 일반 사용자 (\`bohyeon\`)로 쿠버네티스 접근 설정
-
-### 5-1. root 사용자에서 config 파일 (\`.kube\`, \`.minikube\`) 복사
+## 5-1. root 사용자에서 config 파일 (\`.kube\`, \`.minikube\`) 복사
 
 \`\`\`bash
 sudo cp -r /root/.kube /home/bohyeon/
@@ -134,21 +128,19 @@ sudo cp -r /root/.minikube /home/bohyeon/
 sudo chown -R bohyeon:bohyeon /home/bohyeon/.kube /home/bohyeon/.minikube
 \`\`\`
 
-### 5-2. config 내부 경로 수정 (\`/root/.minikube\` → \`/home/bohyeon/.minikube\`)
+## 5-2. config 내부 경로 수정 (\`/root/.minikube\` → \`/home/bohyeon/.minikube\`)
 
 \`\`\`bash
 sed -i 's|/root/.minikube|/home/bohyeon/.minikube|g' ~/.kube/config
 \`\`\`
 
----
-
-## 6. 클러스터 확인
+# 6. 클러스터 확인
 
 \`\`\`bash
 kubectl get nodes
 \`\`\`
 
-**✅ 출력 예시:**
+**✅ 출력 예시**
 
 \`\`\`bash
 NAME        STATUS   ROLES           AGE   VERSION
@@ -161,7 +153,7 @@ brynnpark   Ready    control-plane   12m   v1.32.0
 이후에는 네임스페이스 설계 → Istio Gateway 설정 → 서비스별 Helm Chart 구성 → ArgoCD GitOps 배포 순서로 진행할 예정이다.
 
 
-## ⚠️ 주요 에러 로그 및 해결 방법
+# ⚠️ 주요 에러 로그 및 해결 방법
 
 Minikube를 설치하면서 엄청 많은 에러를 마주했고, 마주한 각 에러와 해결 방안을 정리해놨다.
 ![image1.png](./post10.png)
@@ -180,8 +172,11 @@ Exiting due to RSRC_INSUFFICIENT_CONTAINER_MEMORY: docker only has 959MiB availa
     Kubernetes는 여러 컴포넌트(API server, etcd, controller-manager 등)가 백그라운드에서 동작하는 구조이므로 최소 요구 메모리(RAM)가 존재함. 특히 Minikube는 가상 머신 또는 컨테이너 내에서 전체 Kubernetes를 실행하므로, 메모리가 부족하면 \`kubelet\`이 뜨지도 못하고 에러 발생.
     
 - **해결 방법**:
-    
-    Docker 메모리 설정을 직접 늘릴 수도 있지만, 가장 간단하고 효과적인 방법은 Docker 자체를 우회하고 **\`--driver=none\`을 이용하여 베어메탈 위에 설치**하는 것임.
+  - 해결 방법은 2가지라고 생각됨
+      - 메모리가 큰 서버를 사용한다 (좋은 노트북 .. )
+      - driver=none 으로 진행한다 >> baremetal일 경우 가능
+  - 2번째 방법을 채택. home server로 사용하는 baremetal(Ubuntu)이기 때문에 
+  -  Docker 메모리 설정을 직접 늘릴 수도 있지만, 가장 간단하고 효과적인 방법은 Docker 자체를 우회하고 **\`--driver=none\`을 이용하여 베어메탈 위에 설치**하는 것임.
 
 ### 2. \`NOT_FOUND_CRI_DOCKERD\`
 
@@ -200,8 +195,6 @@ The none driver with Kubernetes v1.24+ and the docker container-runtime requires
     
     GitHub의 [Mirantis/cri-dockerd](https://github.com/Mirantis/cri-dockerd) 저장소에서 소스를 클론하고, \`go build\`로 직접 빌드한 뒤 systemd 서비스로 등록하여 데몬으로 실행되도록 설정함.
     
-
----
 
 ### 3. \`HOST_JUJU_LOCK_PERMISSION\`
 
@@ -227,13 +220,10 @@ Exiting due to HOST_JUJU_LOCK_PERMISSION
     \`\`\`
     
 
----
-
 ### 4. \`NOT_FOUND_CNI_PLUGINS\`
 
 \`\`\`bash
 Exiting due to NOT_FOUND_CNI_PLUGINS:
-
 \`\`\`
 
 - **원인**:
@@ -253,9 +243,7 @@ Exiting due to NOT_FOUND_CNI_PLUGINS:
     sudo mkdir -p /opt/cni/bin
     sudo tar -C /opt/cni/bin -xzf cni-plugins-linux-amd64-v1.4.0.tgz
     \`\`\`
-    
 
----
 
 ### 5. \`permission denied: client.crt\`
 
