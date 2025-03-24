@@ -9,7 +9,8 @@ import Post6 from './posts_1/Post6';
 import Post7 from './posts_1/Post7';
 import Post8 from './posts_1/Post8';
 import Post9 from './posts_1/Post9';
+import Post10 from './posts_1/Post10';
 
 
-const posts = [Post1, Post2, Post3, Post4, Post5, Post6, Post7, Post8, Post9];
+const posts = [Post1, Post2, Post3, Post4, Post5, Post6, Post7, Post8, Post9, Post10];
 export default posts;

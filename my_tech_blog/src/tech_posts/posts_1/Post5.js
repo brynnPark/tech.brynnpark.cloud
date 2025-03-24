@@ -539,7 +539,7 @@ const Post5 = {
   title: title,
   date: 'June, 2024',
   tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS'],
-  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론 (2)편이다. (2)편에서는 Monitoring & Autoscaling, Automation, Container, Networking, Serverless, Edge Service, 백업 및 복구에 대해서 알아본다.',
+  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론 (5)편이다. (5)편에서는 Serverless, Edge Service, 백업 및 복구에 대해서 알아본다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} allowImages /> // Render markdown using the MarkdownRenderer
 };
