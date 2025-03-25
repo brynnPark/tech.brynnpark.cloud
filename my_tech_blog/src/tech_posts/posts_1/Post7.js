@@ -31,7 +31,7 @@ const postContent = `
 AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2에 붙여서만 사용할 수 있다. 각 종류와 서비스에 대해서 알아보자.
 
 ### 블록 스토리지
-![image9.png](./post3/image9.png) 
+![image9.png](./images/post3/image9.png) 
 - 파일을 블록 단위로 쪼개서 저장
 - EC2에 붙여서 사용하는 애들
 - EC2와 동일한 범위의 AZ에서만 사용할 수 있음
@@ -75,7 +75,7 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
 
 ### Amazon Elastic Block Store(Amazon EBS)
 
-![image10.png](./post3/image10.png) 
+![image10.png](./images/post3/image10.png) 
 - SSD
     - 처리할 때 사용
     - 비쌈
@@ -92,8 +92,8 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
 
 ### Amazon Simple Storage Service(Amazon S3)
 
-![image12.png](./post3/image12.png) 
-![image13.png](./post3/image13.png) 
+![image12.png](./images/post3/image12.png) 
+![image13.png](./images/post3/image13.png) 
 
 - 리전 서비스
     - vpc 내부에 있는 서비스가 아니라 Region 단위 서비스
@@ -101,13 +101,13 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
     - 또 다른 리전 서비스 예시) kms, dynamoDB
 
 - 보안
-![image14.png](./post3/image14.png)     
+![image14.png](./images/post3/image14.png)     
     - 서버 측에서 kms이용해서 암호화해주거나
     - 클라이언트 측에서 이 키로 암호화해줘하거나
     - 뭐가 됐든 일단 클라이언트가 선택해야함
 
 - 스토리지 클래스   
-![image15.png](./post3/image15.png)     
+![image15.png](./images/post3/image15.png)     
     - S3 특징
         - 무제한 서비스
         - 비용은 아래와 같이 2가지로 나뉨:
@@ -132,14 +132,14 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
 # 5 데이터베이스
 
 - 직접 관리해야하는 DB
-  ![image17.png](./post3/image17.png)     
+  ![image17.png](./images/post3/image17.png)     
     - EC2위에 DB를 올려서 사용하기도 함
     - 그래서 그냥 AWS에서 자체적인 완전관리형 DB를 만들어버림
 - AWS는 **완전관리형** 데이터베이스
-  ![image18.png](./post3/image18.png)     
+  ![image18.png](./images/post3/image18.png)     
     - 하드웨어 종류, 저장 공간 용량 등과 같은 부분들 설정하면 AWS에서 알아서 해줌
 
-![image18.png](./post3/image18.png) 
+![image18.png](./images/post3/image18.png) 
 - DynamoDB
     - 게임회사에서 굉장히 많이 씀
     - 랭킹변경과 같은 부분이 빠르게 처리되어야 하기 때문에 global로 깔아서 사용 많이 함
@@ -154,11 +154,11 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
     - 컴퓨팅 - 여기서 인스턴스 클래스를 지정
     - 저장 - 여기서 인스턴스 스토리지를 지정
 - 인스턴스 클래스 > 컴퓨팅용
-    ![image19.png](./post3/image19.png)     
+    ![image19.png](./images/post3/image19.png)     
     - DB에 맞는 클래스를 선택해주면 됨
     - 부스트 가능: 특정 기간 동안 사용하지 않았던 cpu를 모아서 한 번에 사용?
 - 인스턴스 스토리지 > 저장용
-    ![image20.png](./post3/image20.png)     
+    ![image20.png](./images/post3/image20.png)     
     - 범용
         - G(General)로 시작되는 애 쓰면됨
     - 프로비저닝된 IOPS
@@ -170,7 +170,7 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
     - 인스턴스가 EC2이기 때문에 EC2에 사용할 수 있는 Storage 필요
 
 ### 보안
-![image21.png](./post3/image21.png) 
+![image21.png](./images/post3/image21.png) 
 - RDS 암호화 꼭 하기!
 
 ### 백업 
@@ -183,7 +183,7 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
 
 ### DB 이중화
 
-![image22.png](./post3/image22.png) 
+![image22.png](./images/post3/image22.png) 
 - 백업용 DB
     - 하나는 아무일도 안하고 진짜 대기만 함 (읽기도 못함)
     - 자동으로 동기화됨
@@ -218,13 +218,13 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
 
 ## 모니터링
 
-![image24.png](./post3/image24.png) 
+![image24.png](./images/post3/image24.png) 
 - 데이터에 기반한 의사 결정
     - 모니터링 데이터를 가지고 객관적인 의사 결정할 수 있음
 
 ### CloudWatch
 
-![image25.png](./post3/image25.png) 
+![image25.png](./images/post3/image25.png) 
 - 하이브리드로 온프레미스와 클라우드를 같이 운영할 때, 두 데이터를 한 눈에 볼 수 있어서(단일 위치에서 모든 지표)매우 유용
 - 시간을 짧게 할 순 있으나 비용 더 많이 들긴함
     - 가장 짧게는 1초 간격으로 가지고 갈 수 있음
@@ -248,13 +248,13 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
     - 근데 확인만 하고, 조치는 안함
 - Target group = Autoscaling group
 
-![image27.png](./post3/image27.png) 
+![image27.png](./images/post3/image27.png) 
 - 고가용성
     - 트래픽이 많아지면 내부적으로 ELB안에서 로드밸런싱을 처리하는 애를 늘려줌
 
 - ELB 구성 요소
     
-    ![image28.png](./post3/image28.png)     
+    ![image28.png](./images/post3/image28.png)     
     - 리스너
         - 본인이 처리할 특정 범위를 정의해서 그것만 가져감
         - 리스너가 알아서 로드밸런싱해줌
@@ -264,7 +264,7 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
     - 규칙
         - 리스너가 처리할 범위를 정하는 Rule
 
-![image29.png](./post3/image29.png) 
+![image29.png](./images/post3/image29.png) 
 - Classic Load Balancer
     - 더이상 사용하는 것이 권장되지 않는 레거시
 - Gateway Load Balancer
@@ -274,7 +274,7 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
     - 즉, <u>**로드밸런싱하기 전에 써드파티에 보내고 다시 받음**</u>
 - ALB
     
-    ![image30.png](./post3/image30.png)     
+    ![image30.png](./images/post3/image30.png)     
     - <u>**Http를 처리하는 로드밸런서**
     - **OSI 7 계층에서 application layer에서 작동**
     - **고정 ip를 제공할 수 없음**
@@ -293,7 +293,7 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
         - 예) 에러 메세지
 - NLB
     
-  ![image31.png](./post3/image31.png)     
+  ![image31.png](./images/post3/image31.png)     
     - <u>**ALB에 비해서 빠름**</u>
     - field에서 가장 많이 씀
         - <u>**고정 ip를 사용할 수 있기 때문**</u>
@@ -304,11 +304,11 @@ AWS에서는 각 타입별로 EBS, EFS, S3를 제공하고 있으며 EBS는 EC2�
     
 - GLB
     
-  ![image32.png](./post3/image32.png)     
+  ![image32.png](./images/post3/image32.png)     
 
 ### AutoScaling
 
-![image33.png](./post3/image33.png) 
+![image33.png](./images/post3/image33.png) 
 
 - Amazon Machine Image(AMI)뿐만 아니라 다른 파일들도 필요함
 - 조정 정책

@@ -60,7 +60,7 @@ const postContent = `
     
     → ra 즉, return address를 통해 Main 함수로 다시 돌아갈 수 있음
     
-![image16.png](./post6/16.png)
+![image16.png](./images/post6/16.png)
 
 n.a. : reserve된 값
 
@@ -184,19 +184,19 @@ yes: 유지되어야 하는 값
             jr $ra // and return
     \`\`\`
     
-![image2.png](./post6/17.png)  
+![image2.png](./images/post6/17.png)  
 
 - fp(frame pointer) : 항상 함수의 시작위치를 가리킴
     
 - **Local Data on the Stack**
-    ![image18.png](./post6/18.png)    
+    ![image18.png](./images/post6/18.png)    
     
     - 함수가 커질 수록 procedure frame(activation record)가 커지게 되는 문제 발생
     - recursive 함수 = 고비용
         - 중간에 있는 process 안에 있는 register 정보 중 stack을 준비해서 overwrite될 수 있는 것들은 stack에 밀어넣어 저장해두고 해당 data를 다시 register로 가져오는 작업이 빈번하기 때문에 메모리 연산이 많이 일어나고 이로 인해서 성능이 낮아질 수 있음
         
 - **Memory Layout**
-    ![image19.png](./post6/19.png)    
+    ![image19.png](./images/post6/19.png)    
     
 
 # 4. Addressing

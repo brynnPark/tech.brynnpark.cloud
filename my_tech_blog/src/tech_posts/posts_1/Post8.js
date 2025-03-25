@@ -135,7 +135,7 @@ const postContent = `
         \`\`\`
         
 - MIPS 32 Registers
-    ![image2.png](./post6/2.png)
+    ![image2.png](./images/post6/2.png)
     
     - 각각의 용도에 맞게 register 써야함 (register 번호마다 이름, 쓰임새가 정해져 있음)
     
@@ -149,7 +149,7 @@ const postContent = `
         - 메모리는 바이트(8-bit)단위로 접근한다.[register는 word단위(32bit)
     - Words are aligned in memory
         - Address must be a multiple of 4
-            ![image3.png](./post6/3.png)            
+            ![image3.png](./images/post6/3.png)            
             
     - MIPS is Big Endian [접근방식이 주소의 msb를 이용]
         - Most-significant byte at least address of a word
@@ -193,7 +193,7 @@ const postContent = `
         - register가 더 저렴한 비용으로 빠르게 연산하기 때문
         
 - MemoryHierarchy
-    ![image4.png](./post6/4.png)    
+    ![image4.png](./images/post6/4.png)    
     
     - 아래로 내려갈 수록 많은 양의 data를 저장할 수 있지만, 느림
     - 보통 CPU=(registers, cache), DRAM=main memory
@@ -235,7 +235,7 @@ const postContent = `
 …
 
 ## MIPS-32 ISA
-![image5.png](./post6/5.png)
+![image5.png](./images/post6/5.png)
 
 - MIPS는 규칙성을 위해 R, I, J format(모두 32 bits)으로 이루어짐
 
@@ -259,7 +259,7 @@ assembly 언어를 어떻게 machine code로 변환하는가?
 
 - 하드웨어는 정해진 규칙에 따라서 해석하기만 하면 되기 때문에 포맷은 변하지 않음
 - **MIPS R-format Instructions**
-![image6.png](./post6/6.png)    
+![image6.png](./images/post6/6.png)    
     
     - opcode 포함 6개의 field
         - **op: add, sub 연산에 주로 나타낼 때 사용**
@@ -269,11 +269,11 @@ assembly 언어를 어떻게 machine code로 변환하는가?
         - funct: 6 bits로 opcode 나타내기 부족한 경우 사용 = opcode여분비트
 - **MIPS R-format Example**
     - MIPS green sheet 참조해서 machine code(binary)로 변환 가능
-        ![image7.png](./post6/7.png)    
+        ![image7.png](./images/post6/7.png)    
 
 
 - **MIPS I-format Instructions**
-    ![image8.png](./post6/8.png)    
+    ![image8.png](./images/post6/8.png)    
     
     - opcode 포함 4개의 field
         - **op: load, store, branch instruction에 주로 사용**
@@ -290,7 +290,7 @@ assembly 언어를 어떻게 machine code로 변환하는가?
         - 앞 6 bit(opcode)를 통해 어떤 포맷인지 파악할 수 있음
 
 - **MIPS J-format Instructions**
-    ![image9.png](./post6/9.png)    
+    ![image9.png](./images/post6/9.png)    
     
     - opcode 포함 4개의 field
         - **op: jump instruction에 주로 사용**
@@ -302,7 +302,7 @@ assembly 언어를 어떻게 machine code로 변환하는가?
         
 
 ## Stored Program Computers
-![image10.png](./post6/10.png)
+![image10.png](./images/post6/10.png)
 
 - Processor 형태의 연산 장치
 - Memory 형태의 기억 장치
@@ -315,7 +315,7 @@ assembly 언어를 어떻게 machine code로 변환하는가?
 - 즉, ISA만 같다면 컴파일된 파일을 다른 컴퓨터에서도 읽을 수 있음
 
 ## Logical Operations
-![image11.png](./post6/11.png)
+![image11.png](./images/post6/11.png)
 
 - Shift operations
     - Shift left logical
@@ -330,19 +330,19 @@ assembly 언어를 어떻게 machine code로 변환하는가?
         
 
 - AND operations
-    ![image12.png](./post6/12.png)    
+    ![image12.png](./images/post6/12.png)    
     
 
 - OR operations
-    ![image13.png](./post6/13.png)    
+    ![image13.png](./images/post6/13.png)    
     
 
 - XOR operations
-    ![image14.png](./post6/14.png)    
+    ![image14.png](./images/post6/14.png)    
     
 
 - NOT operations
-    ![image15.png](./post6/15.png)    
+    ![image15.png](./images/post6/15.png)    
     
 
 ## Instructions for Making Decisions
@@ -412,7 +412,6 @@ assembly 언어를 어떻게 machine code로 변환하는가?
     - Unsigned comparison: \`sltu\`, \`sltui\`
     - 어떤 instruction 쓰느냐에 따라서 표현할 수 있는 값의 범위가 다름
     - 만일, 엄청나게 큰 양수 표현하고 싶을 시, unsigned 중에서 사용 가능
-
 
 `;
 

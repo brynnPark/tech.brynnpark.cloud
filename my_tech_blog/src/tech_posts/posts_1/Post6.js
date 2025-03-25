@@ -24,7 +24,7 @@ const postContent = `
     - 종량제 요금제
 - 클라우드 컴퓨팅의 주요 이점
     
-    ![image1.png](./post3/image1.png)
+    ![image1.png](./images/post3/image1.png)
     
     - 속도 및 민첩성 향상
         - Q) 클라우드도 결국 어딘가에서 서버를 운영하고 있는데, 서버에서 데이터를 빼서 오는 데 시간이 소요되는 거는 똑같은 거 아닌가?
@@ -62,7 +62,7 @@ const postContent = `
 
 - 어떤 리젼에 서비스를 배포해야 하나?
     
-    ![image2.png](./post3/image2.png)
+    ![image2.png](./images/post3/image2.png)
     
     - 지연 시간
         - 본인이 서비스를 운영할 나라/지역에서 가장 가까운 곳에 둠으로써 지연 시간을 줄임
@@ -76,7 +76,7 @@ const postContent = `
         
 
 ## 보안 : AWS 공동 책임 모델
-![image3.png](./post3/image3.png)
+![image3.png](./images/post3/image3.png)
 
 ## IAM
 
@@ -159,7 +159,7 @@ const postContent = `
     > - xlarge: 큰 사이즈
 
 - 인스턴스 수명 주기
-![image4.png](./post3/image4.png)    
+![image4.png](./images/post3/image4.png)    
     - 보류 중 / 중지 중 / 중지됨 / 종료 중 / 종료됨 상태 → 비용 지불 안됨
 - 스팟 인스턴스
     - 비어있는 인스턴스에 대해 최대 90프로까지 싸게 경매를 붙임
@@ -170,7 +170,7 @@ const postContent = `
     - 서버 하나를 전체로 소유하는 개념
     - 나중에 배울 전용 인스턴스랑 약간 다른 개념
 - 인스턴스 테넌시? >>>> 다시 봐보기
-  ![image5.png](./post3/image5.png)    
+  ![image5.png](./images/post3/image5.png)    
     - 전용 테넌시 / 공용 테넌시로 나뉘고
         - 전용 테넌시는 한 데이터 센터의 공간을 예약하는 것
         - 공용은 공간을 나눠서 사용
@@ -202,7 +202,7 @@ const postContent = `
 ### 서버리스 컴퓨팅
 
 **이점**
-![image6.png](./post3/image6.png)        
+![image6.png](./images/post3/image6.png)        
   - 얼마만큼만 쓰겠다고 지정만 해주면 알아서 보안패치도 하고 관리도 해줌
   - 이벤트가 발생하면 알아서 처리하고 종료됨
 
@@ -233,11 +233,11 @@ const postContent = `
 > - 호스트 기반 방화벽
 > - Amazon VPC 흐름 로그
 
-![image7-1.png](./post3/image7-1.png)    
+![image7-1.png](./images/post3/image7-1.png)    
 위 그림이 Cloud에서의 가장 기본적인 네트워크 구조이다. 가장 큰 단위인 Region 안에 VPC가 포함되고, VPC 안에 AZ가 포함된다. 
 각 AZ는 최소 1개에서 최대 200개의 Subnet으로 구성되어 있으며, Public과 Private으로 나뉜다.
 
-![image7-2.png](./post3/image7-2.png)    
+![image7-2.png](./images/post3/image7-2.png)    
 위와 동일한 구조이지만, 이렇게 AZ가 VPC 밖으로 나오게 그릴 수도 있다. 이 경우는 하나의 VPC만 그렸지만, 하나의 AZ가 여러 VPC를 가지고 있을 수 있다. 
 (즉, 여러 개의 VPC가 하나의 AZ 안에서 Subnet을 공유 혹은 나눠가지는 형태가 되는 것)
 
@@ -347,7 +347,7 @@ const postContent = `
     - 즉, 보안 그룹에서 1차로 걸러지고, ACL에 의해 나갈 수 있음
     - 하지만 보안 그룹은 보통 아웃바운드 룰이 없기 때문에 신경을 안써도 될 듯?
 - 보안 모범 사례
-![image8.png](./post3/image8.png)     
+![image8.png](./images/post3/image8.png)     
     - 흐름 로그
         - 어떤 보안 그룹을 통해서 인바운드됐고, 몇 시에 트래픽이 발생했는 지, 어떤 보안 그룹에서 거절됐는 지 등이 기록됨
 

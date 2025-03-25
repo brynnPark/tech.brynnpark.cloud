@@ -156,7 +156,7 @@ brynnpark   Ready    control-plane   12m   v1.32.0
 # ⚠️ 주요 에러 로그 및 해결 방법
 
 Minikube를 설치하면서 엄청 많은 에러를 마주했고, 마주한 각 에러와 해결 방안을 정리해놨다.
-![image1.png](./post10.png)
+![image1.png](/images/post10.png)
 
 ### 1. \`RSRC_INSUFFICIENT_CONTAINER_MEMORY\`
 
@@ -274,12 +274,10 @@ const Post10 = {
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2024',
-  tags: ['Kubernetes', 'Infra', 'Minikube', 'MSA', 'Homelab'],
-  excerpt: '이 포스팅은 클라우드 컴퓨팅의 기초적인 요소와 AWS 서비스를 훑어본다. 특히, 서비스를 설계하기 위해 필요한 기초적인 서비스를..',
+  tags: ['Kubernetes', 'Infra', 'Minikube', 'MSA', 'Homelab', 'Baremetal'],
+  excerpt: '이 포스팅은 Ubuntu 기반 홈서버 환경에서 Docker 없이 베어메탈로 Minikube를 설치하고, 일반 사용자로 Kubernetes 클러스터를 설정하는 과정을 정리한 것이다. 설치 과정에서 마주한 다양한 에러와 그에 대한 해결법도 상세히 포함되어 있으며, 향후 MSA 프로젝트를 Jenkins, Istio, ArgoCD, Grafana와 함께 배포하기 위한 준비 단계이다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
-  // content: <MarkdownViewer content={postContent} />,
-  // content: <MDEditor.Markdown source={postContent} />,
 };
 
 export default Post10;
