@@ -7,7 +7,7 @@ Observability(가시성)는 시스템의 내부 상태를 **외부에서 드러�
 
 <br/>
 
-### Observability의 3대 구성요소 ("Three Pillars")
+## Observability의 3대 구성요소 ("Three Pillars")
 ![Three pillars](/images/post14/image-1.png)
 1. **Logs** – 이벤트 기반 정보 (무슨 일이 언제 일어났는가?)
 
