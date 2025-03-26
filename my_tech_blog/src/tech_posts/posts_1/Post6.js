@@ -14,6 +14,8 @@ mdParser.use(markdownItAttrs);
 const title = 'AWS Technical Essentials (1)';
 
 const postContent = `
+이 글은 AWS의 전반적인 구조와 컴퓨팅, 네트워킹, 보안 구성에 대해 설명한다. 클라우드 컴퓨팅의 개념과 이점, 글로벌 인프라 구성요소(AZ, Region, Edge Location), EC2 및 서버리스 컴퓨팅(Lambda, Fargate), 컨테이너 관리(ECS, EKS), VPC와 서브넷 구조, 라우팅 테이블, 보안 그룹과 NACL의 차이 등을 체계적으로 정리한다.
+
 # 1 AWS 소개
 
 ## Cloud Computing
@@ -358,8 +360,8 @@ const Post6 = {
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2024',
-  tags: ['AWS', 'Technical Essentials'],
-  excerpt: '이 포스팅은 클라우드 컴퓨팅의 기초적인 요소와 AWS 서비스를 훑어본다. 특히, 서비스를 설계하기 위해 필요한 기초적인 서비스를..',
+  tags: ['AWS', 'Technical Essentials', 'EC2', 'VPC', 'IAM', 'Cloud Computing'],
+  excerpt: '이 글은 AWS의 전반적인 구조와 컴퓨팅, 네트워킹, 보안 구성에 대해 설명한다. 클라우드 컴퓨팅의 개념과 이점, 글로벌 인프라 구성요소(AZ, Region, Edge Location), EC2 및 서버리스 컴퓨팅(Lambda, Fargate), 컨테이너 관리(ECS, EKS), VPC와 서브넷 구조, 라우팅 테이블, 보안 그룹과 NACL의 차이 등을 체계적으로 정리한다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };

@@ -16,6 +16,10 @@ mdParser.use(markdownItAttrs);
 const title = 'Architecting on AWS (5)';
 
 const postContent = `
+이 포스팅은 AWS 서버리스 컴퓨팅 개념과 Lambda, API Gateway, SQS, SNS, Kinesis 등의 서버리스 서비스에 대해 정리한다. 
+또한 Route 53, CloudFront 등 엣지 서비스와 함께 백업 및 복구 전략까지 아우르며, 
+효율적인 인프라 운영과 고가용성 아키텍처 설계를 위한 방법들을 다룬다.
+
 
 # 11 Serverless
 
@@ -537,9 +541,9 @@ const Post5 = {
   id: 5,
   slug: SlugGenerator(title),
   title: title,
-  date: 'June, 2024',
-  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS'],
-  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론 (5)편이다. (5)편에서는 Serverless, Edge Service, 백업 및 복구에 대해서 알아본다.',
+  date: 'July, 2024',
+  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS', 'Serverless', 'Lambda', 'Edge Services'],
+  excerpt: '이 포스팅은 AWS 서버리스 컴퓨팅 개념과 Lambda, API Gateway, SQS, SNS, Kinesis 등의 서버리스 서비스에 대해 정리한다. 또한 Route 53, CloudFront 등 엣지 서비스와 함께 백업 및 복구 전략까지 아우르며, 효율적인 인프라 운영과 고가용성 아키텍처 설계를 위한 방법들을 다룬다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} allowImages /> // Render markdown using the MarkdownRenderer
 };

@@ -8,10 +8,21 @@ function TechBlogPage() {
   const [showAllTags, setShowAllTags] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const tagContainerRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 4;
 
   // Get all unique tags and add "All" as the default option
   const allTags = useMemo(() => ['All', ...new Set(posts.flatMap(post => post.tags))], []);
   const filteredPosts = selectedTag === 'All' ? posts : posts.filter(post => post.tags.includes(selectedTag));
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedTag]);
+  
 
   useEffect(() => {
     if (tagContainerRef.current) {
@@ -33,7 +44,17 @@ function TechBlogPage() {
       </div>
 
       {/* Tag Filter Section */}
-      <div className={`tag-filter-container ${showAllTags ? 'expanded' : ''}`} ref={tagContainerRef}>
+      <div
+          className="tag-filter-container"
+          ref={tagContainerRef}
+          style={{
+            maxHeight: showAllTags
+              ? tagContainerRef.current?.scrollHeight
+              : '40px',
+            overflow: 'hidden',
+            transition: 'max-height 0.3s ease',
+          }}
+        >
         {allTags.map((tag, index) => (
           <button
             key={index}
@@ -54,7 +75,7 @@ function TechBlogPage() {
       )}
 
       <div className="posts-container">
-        {filteredPosts.map(post => (
+      {currentPosts.map(post => (
           <div key={post.id} className="post-card">
             <h2><Link to={`/${post.slug}`}>{post.title}</Link></h2>
             <p className="main-post-date"><small>{post.date}</small></p>
@@ -67,6 +88,22 @@ function TechBlogPage() {
           </div>
         ))}
       </div>
+      {totalPages > 1 && (
+        <div className="pagination-container">
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i + 1}
+              className={`pagination-button ${currentPage === i + 1 ? 'active' : ''}`}
+              onClick={() => setCurrentPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+        ))}
+      </div>
+)}
+
+
+
     </div>
   );
 }

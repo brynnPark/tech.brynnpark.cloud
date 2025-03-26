@@ -16,6 +16,8 @@ mdParser.use(markdownItAttrs);
 const title = 'Architecting on AWS (3)';
 
 const postContent = `
+이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. (3)편에서는 AWS의 모니터링 및 자동화 도구에 대해 다룬다. CloudWatch의 지표 및 로그 관리, EventBridge를 통한 이벤트 기반 작업 자동화, Auto Scaling의 작동 방식과 비용 최적화 전략, 그리고 IaC 도구인 CloudFormation과 AWS CDK, Beanstalk, Systems Manager를 활용한 인프라 자동화와 운영 방안을 설명한다.  
+
 # 7 Monitoring and Autoscaling
 
 ## Monitoring
@@ -232,9 +234,9 @@ const Post3 = {
   id: 3,
   slug: SlugGenerator(title),
   title: title,
-  date: 'June, 2024',
-  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS'],
-  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. 서비스를 설계를 위한 AWS 서비스를 자세하게 알아볼 것이며, 5편에 걸쳐서 작성할 예정이다. (3)편에서는 Monitoring and Autoscaling에 대해서 다룬다.',  
+  date: 'July, 2024',
+  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS', 'Monitoring', 'Auto Scaling'],
+  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. (3)편에서는 AWS의 모니터링 및 자동화 도구에 대해 다룬다. CloudWatch의 지표 및 로그 관리, EventBridge를 통한 이벤트 기반 작업 자동화, Auto Scaling의 작동 방식과 비용 최적화 전략, 그리고 IaC 도구인 CloudFormation과 AWS CDK, Beanstalk, Systems Manager를 활용한 인프라 자동화와 운영 방안을 설명한다.',  
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} allowImages /> // Render markdown using the MarkdownRenderer
 };

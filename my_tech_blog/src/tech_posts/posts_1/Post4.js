@@ -16,6 +16,10 @@ mdParser.use(markdownItAttrs);
 const title = 'Architecting on AWS (4)';
 
 const postContent = `
+이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. 
+(4)편에서는 AWS의 컨테이너 서비스(ECS, EKS, Fargate)와 네트워킹 구성에 대해 다룬다. 
+베어메탈, VM, 컨테이너의 차이부터 AWS에서 제공하는 컨테이너 실행 환경, 컨테이너 이미지 저장소인 ECR의 역할을 설명한다. 
+또한, VPC Endpoint, VPC Peering, Site-to-Site VPN, Direct Connect, Transit Gateway 등 다양한 하이브리드 및 네트워크 연결 방법에 대해서도 소개한다.  
 
 
 # 9 Container
@@ -225,9 +229,9 @@ const Post4 = {
   id: 4,
   slug: SlugGenerator(title),
   title: title,
-  date: 'June, 2024',
-  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS'],
-  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. 서비스를 설계를 위한 AWS 서비스를 자세하게 알아볼 것이며, 5편에 걸쳐서 작성할 예정이다. (4)편에서는 컨테이너와 네트워킹에 대해서 다룬다.',  
+  date: 'July, 2024',
+  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS', 'EKS', 'VPC'],
+  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. (4)편에서는 AWS의 컨테이너 서비스(ECS, EKS, Fargate)와 네트워킹 구성에 대해 다룬다. 베어메탈, VM, 컨테이너의 차이부터 AWS에서 제공하는 컨테이너 실행 환경, 컨테이너 이미지 저장소인 ECR의 역할을 설명한다. 또한, VPC Endpoint, VPC Peering, Site-to-Site VPN, Direct Connect, Transit Gateway 등 다양한 하이브리드 및 네트워크 연결 방법에 대해서도 소개한다.',  
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} allowImages /> // Render markdown using the MarkdownRenderer
 };

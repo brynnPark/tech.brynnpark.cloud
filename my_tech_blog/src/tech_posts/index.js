@@ -14,7 +14,8 @@ import Post11 from './posts_1/Post11';
 import Post12 from './posts_1/Post12';
 import Post13 from './posts_1/Post13';
 import Post14 from './posts_1/Post14';
+import Post15 from './posts_1/Post15';
 
 
-const posts = [Post1, Post2, Post3, Post4, Post5, Post6, Post7, Post8, Post9, Post10, Post11, Post12, Post13, Post14];
+const posts = [Post1, Post2, Post3, Post4, Post5, Post6, Post7, Post8, Post9, Post10, Post11, Post12, Post13, Post14, Post15];
 export default posts;

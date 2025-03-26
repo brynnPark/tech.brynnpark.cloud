@@ -16,6 +16,9 @@ mdParser.use(markdownItAttrs);
 const title = 'Architecting on AWS (1)';
 
 const postContent = `
+이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. 
+(1)편에서는 AWS 아키텍처의 기본 사항부터 계정 보안, 네트워킹 구성까지 전반적인 클라우드 인프라 설계에 필요한 핵심 요소들을 정리한다. 
+AWS Global Infrastructure, Local Zone, Well-Architected Framework, IAM의 원리와 정책 구성 방식, 보안 그룹과 NACL의 차이, 서브넷 및 VPC 구조 등 다양한 주제를 아우른다.
 
 # 1 아키텍팅 기본 사항
 
@@ -370,9 +373,9 @@ const Post1 = {
   id: 1,
   slug: SlugGenerator(title),
   title: title,
-  date: 'June, 2024',
-  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS'],
-  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. 서비스를 설계를 위한 AWS 서비스를 자세하게 알아볼 것이며, 5편에 걸쳐서 작성할 예정이다. (1)편에서는 아키텍팅의 기본 사항, 계정 보안에 대해서 다룬다.',
+  date: 'July, 2024',
+  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS', 'IAM', 'Networking'],
+  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. (1)편에서는 AWS 아키텍처의 기본 사항부터 계정 보안, 네트워킹 구성까지 전반적인 클라우드 인프라 설계에 필요한 핵심 요소들을 정리한다. AWS Global Infrastructure, Local Zone, Well-Architected Framework, IAM의 원리와 정책 구성 방식, 보안 그룹과 NACL의 차이, 서브넷 및 VPC 구조 등 다양한 주제를 아우른다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };

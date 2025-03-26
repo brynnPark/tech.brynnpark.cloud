@@ -14,6 +14,8 @@ mdParser.use(markdownItAttrs);
 const title = 'AWS Technical Essentials (2)';
 
 const postContent = `
+이 글은 AWS의 주요 스토리지 서비스인 EBS, EFS, S3를 비롯해 RDS와 DynamoDB와 같은 데이터베이스, 그리고 CloudWatch, ELB, Auto Scaling 등 인프라 관리 도구들을 소개한다. 각 스토리지 타입의 특성과 사용 목적, 보안 및 백업 전략, 로드 밸런싱 방식 및 오토 스케일링 정책까지 실무에 필요한 내용을 체계적으로 정리한다.
+
 # 4 AWS 스토리지
 
 > **AWS Storage 종류**
@@ -331,8 +333,8 @@ const Post7 = {
   slug: SlugGenerator(title),
   title: title,
   date: 'June, 2024',
-  tags: ['AWS', 'Technical Essentials'],
-  excerpt: '이 포스팅은 클라우드 컴퓨팅의 기초적인 요소와 AWS 서비스를 훑어본다. 특히, 서비스를 설계하기 위해 필요한 기초적인 서비스를..',
+  tags: ['AWS', 'Technical Essentials', 'Storage', 'S3'],
+  excerpt: '이 글은 AWS의 주요 스토리지 서비스인 EBS, EFS, S3를 비롯해 RDS와 DynamoDB와 같은 데이터베이스, 그리고 CloudWatch, ELB, Auto Scaling 등 인프라 관리 도구들을 소개한다. 각 스토리지 타입의 특성과 사용 목적, 보안 및 백업 전략, 로드 밸런싱 방식 및 오토 스케일링 정책까지 실무에 필요한 내용을 체계적으로 정리한다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };

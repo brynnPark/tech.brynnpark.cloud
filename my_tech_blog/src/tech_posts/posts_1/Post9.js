@@ -13,6 +13,8 @@ mdParser.use(markdownItAttrs);
 const title = 'ISA: Insruction Set Architecture (2)';
 
 const postContent = `
+이 글에선 MIPS ISA에서 함수 호출이 어떻게 이루어지는지를 설명하며, procedure call의 6단계, 레지스터 사용 규약, 스택을 활용한 변수 보호, Leaf 및 Non-leaf 함수의 구현 방법 등을 다룬다. 또한 재귀 함수와 메모리 레이아웃, 성능 최적화 측면에서의 스택 연산의 비용까지 함께 살펴본다.
+
 # 3. Procedure
 
 - Supporting procedures in computer hardware
@@ -102,7 +104,7 @@ yes: 유지되어야 하는 값
         
     - Compiled MIPS code
         
-        \`\`\`javascript
+        \`\`\`bash
         leaf_example:
               addi  $sp,  $sp,  -12. // 0으로부터 12 byte 떨어진곳을 sp가 가리키게함
               sw    $t1,  8($sp)   // -12에서 +8 만큼 떨어진 곳에 $t1 값 저장 (-4)
@@ -133,7 +135,7 @@ yes: 유지되어야 하는 값
 
 - Leaf Procedure Example (Optimzed)
     
-    \`\`\`nasm
+    \`\`\`bash
     leaf_example:
           addi  $sp,  $sp,  -4. // 0으로부터 12 byte 떨어진곳을 sp가 가리키게함
           sw    $s0,  0($sp)   // -12에서 0 만큼 떨어진 곳에 $t1 값 저장 (-12)
@@ -160,7 +162,7 @@ yes: 유지되어야 하는 값
         - Any arguments and temporaries needed after the call
     - Restore from the stack after the call
     
-    \`\`\`nasm
+    \`\`\`bash
     fact: addi $sp, $sp, -8 // adjust stack for 2 items 
             sw $ra, 4($sp) // save return address
             sw $a0, 0($sp) // save argument
@@ -211,9 +213,9 @@ const Post9 = {
   id: 9,
   slug: SlugGenerator(title),
   title: title,
-  date: 'June, 2024',
-  tags: ['Computer Architecuture', 'ISA', 'Computer Science', 'MIPS'],
-  excerpt: '컴퓨터 구조 전공 수업 내용을 바탕으로 정리한 포스팅이다. 컴퓨터 구조의 개요와 시스템의 작동 원리, ISA와 MIPS에 대해서 자세하게 다룬다. ',
+  date: 'June, 2023',
+  tags: ['Computer Architecuture', 'ISA', 'Computer Science', 'MIPS', 'Assembly'],
+  excerpt: '이 글에선 MIPS ISA에서 함수 호출이 어떻게 이루어지는지를 설명하며, procedure call의 6단계, 레지스터 사용 규약, 스택을 활용한 변수 보호, Leaf 및 Non-leaf 함수의 구현 방법 등을 다룬다. 또한 재귀 함수와 메모리 레이아웃, 성능 최적화 측면에서의 스택 연산의 비용까지 함께 살펴본다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };

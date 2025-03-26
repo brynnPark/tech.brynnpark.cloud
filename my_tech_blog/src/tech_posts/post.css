@@ -101,7 +101,6 @@ pre {
 .markdown-content pre code {
   padding-left: 0;
   background-color: transparent; /* To ensure only the pre element has the background */
-  font-weight: bold;
 }
 
 inline-code {

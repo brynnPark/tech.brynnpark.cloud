@@ -14,6 +14,8 @@ mdParser.use(markdownItAttrs);
 const title = 'ISA: Insruction Set Architecture (1)';
 
 const postContent = `
+이 글은 컴퓨터 구조 수업에서 다루는 MIPS ISA에 대한 개요와 함께, 명령어 포맷(R/I/J), 레지스터 구조, 메모리 접근 방식 등을 상세히 설명하고, C 코드가 MIPS 어셈블리 코드로 변환되는 과정을 예제로 살펴본다. 또한 조건문과 반복문을 MIPS로 구현하는 방식과 Logical Operation, Branch Instruction 설계 원칙 등을 소개한다.
+
 # 1. Overview of MIPS ISA
 
 - 컴퓨터 구조 수업에서 굉장히 중요한 부분을 차지하는 ISA
@@ -26,7 +28,7 @@ const postContent = `
 
 - **Computer Systems Stack**
 
-![image1.png](./post6/1.png)
+![image1.png](./images/post6/1.png)
 - ISA와 Microarchitecture가 HW의 최상단 layer에 있음 → sw와 hw를 연결시키는 interface역할
 - application이 hw의 변화를 drive하고, computer architecture 또한 sw의 변화를 도모함 :서로 상호작용
     
@@ -82,7 +84,7 @@ const postContent = `
     - Add and subtract, three operands
         - Two sources and one destination
             
-            \`\`\` nasm
+            \`\`\`bash
             add a,b,c // a=b+c [add = opcode, 나머지: operand]
             sub a,b,c // a=b-c [a: dest, b,c: source]
             \`\`\`
@@ -95,7 +97,7 @@ const postContent = `
     - C code  **\`f = (g+h) - (i+j);\`**
     - Compiled MIPS code (assembly)	g,h같은 변수 사실 $s0 이런 식으로 써야함
         
-        \`\`\`nasm
+        \`\`\`bash
         add $t0, g, h # temp t0 = g + h  // 연산결과를 임의로 t0라는 공간에 넣어줌
         add $t1, i, j # temp t1 = i + j  // 연산결과를 임의로 t1라는 공간에 넣어줌
         sub f, t0, t1 # f = t0 - t1
@@ -128,7 +130,7 @@ const postContent = `
         
     - **Compiled MIPS code**
         
-        \`\`\`nasm
+        \`\`\`bash
         add $t0, $s1, $s2 # temp t0 = g + h  // 연산결과를 임의로 t0라는 공간에 넣어줌
         add $t1, $s3, $s4 # temp t1 = i + j  // 연산결과를 임의로 t1라는 공간에 넣어줌
         sub $s0, $t0, $t1 # f = t0 - t1
@@ -164,7 +166,7 @@ const postContent = `
         - 4 bytes per word (32 bits)
         - Index 8 requires offset of 32
         
-        \`\`\`
+        \`\`\`bash
         lw $t0, 32($s3) // load word(32bit) and store it in $t0
         \`\`\`
         
@@ -178,7 +180,7 @@ const postContent = `
         - 4 bytes per word (32 bits)
         - Index 8 requires offset of 32
         
-        \`\`\`nasm
+        \`\`\`bash
         lw $t0, 32($s3) // load word(32bit) and store it in $t0
         add $t0, $s2, $t0 // 계산 후 다시 $t0에 넣음
         sw $t0, 48($s3) // store word: $t0는 register의 정보니까 다시 store해줘야함
@@ -361,7 +363,7 @@ assembly 언어를 어떻게 machine code로 변환하는가?
     - Compiled MIPS code
         - f, g, h, i, j = $s0, $s1, $s2, $s3, $s4
         
-        \`\`\`
+        \`\`\`bash
         bne $s3, $s4, ELSE
         add $s0, $s1, $s2
         j    EXIT
@@ -376,7 +378,7 @@ assembly 언어를 어떻게 machine code로 변환하는가?
         - i in $s3, k in $s5, address of save in $s6
         - Suppose the data type of the save array is word (4 byte)
         
-        \`\`\`nasm
+        \`\`\`bash
         Loop: sll  $t1, $s3, 2     // i를 2만큼 left shift한 값을 t1에 넣음 (i를 4배)
               add  $t1, $t1, $s6   // save의 주소값 + 4*i = save[i]주소값 = t1
               lw   $t0, 0($t1)     // t1주소에 담긴 값을 불러오기:t0에 저장 (t0= save[i])
@@ -422,7 +424,7 @@ const Post8 = {
   title: title,
   date: 'June, 2023',
   tags: ['Computer Architecuture', 'ISA', 'Computer Science', 'MIPS'],
-  excerpt: '컴퓨터 구조 전공 수업 내용을 바탕으로 정리한 포스팅이다. 컴퓨터 구조의 개요와 시스템의 작동 원리, ISA와 MIPS에 대해서 자세하게 다룬다. ',
+  excerpt: '이 글은 컴퓨터 구조 수업에서 다루는 MIPS ISA에 대한 개요와 함께, 명령어 포맷(R/I/J), 레지스터 구조, 메모리 접근 방식 등을 상세히 설명하고, C 코드가 MIPS 어셈블리 코드로 변환되는 과정을 예제로 살펴본다. 또한 조건문과 반복문을 MIPS로 구현하는 방식과 Logical Operation, Branch Instruction 설계 원칙 등을 소개한다.',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
 };

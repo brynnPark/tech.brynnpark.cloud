@@ -16,6 +16,10 @@ mdParser.use(markdownItAttrs);
 const title = 'Architecting on AWS (2)';
 
 const postContent = `
+이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. 
+(2)편에서는 AWS 컴퓨팅 서비스, 스토리지, 데이터베이스에 대한 개념과 활용법을 정리한 포스팅이다. 
+EC2 인스턴스 유형, 비용 최적화 전략, 서버리스 컴퓨팅 옵션인 Lambda와 Fargate, EBS와 S3의 차이, DynamoDB와 RDS의 구조적 비교 및 사용 사례를 다룬다. 
+Storage Gateway와 DataSync, DAX 등 마이그레이션 및 캐싱 서비스까지 폭넓게 다룬다.
 
 # 4 Computing
 
@@ -538,9 +542,9 @@ const Post2 = {
   id: 2,
   slug: SlugGenerator(title),
   title: title,
-  date: 'June, 2024',
-  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS'],
-  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. 서비스를 설계를 위한 AWS 서비스를 자세하게 알아볼 것이며, 5편에 걸쳐서 작성할 예정이다. (2)편에서는 Computing, Storage, Database에 대해서 다룬다.',  
+  date: 'July, 2024',
+  tags: ['AWS', 'Architecting', 'Cloud Computing', 'Architecting on AWS', 'Serverless', 'Storage', 'Database'],
+  excerpt: '이 포스팅은 AWS 서비스를 이용해 아키텍처를 설계하는 방법론에 대해 알아본다. (2)편에서는 AWS 컴퓨팅 서비스, 스토리지, 데이터베이스에 대한 개념과 활용법을 정리한 포스팅이다. EC2 인스턴스 유형, 비용 최적화 전략, 서버리스 컴퓨팅 옵션인 Lambda와 Fargate, EBS와 S3의 차이, DynamoDB와 RDS의 구조적 비교 및 사용 사례를 다룬다. Storage Gateway와 DataSync, DAX 등 마이그레이션 및 캐싱 서비스까지 폭넓게 다룬다.',  
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} allowImages /> // Render markdown using the MarkdownRenderer
 };
