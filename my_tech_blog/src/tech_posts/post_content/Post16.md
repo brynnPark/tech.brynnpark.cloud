@@ -44,7 +44,8 @@
 > 1. SSH를 통해서 Bastion Host에 연결한다. (`Port 22`으로 연결)
 > 2. Bastion Host에서 Private subnet에 있는 Web Server로 접속한다. <br/>
 > **(같은 VPC 내에서는 프라이빗 IP를 통해 EC2 간 통신이 가능)** <br/>
-> **즉, Bastion Host는 Web Server의 프라이빗 IP로 직접 SSH 접속 !!** <br/>
+> **즉, Bastion Host는 Web Server의 프라이빗 IP로 직접 SSH 접속 !!** <br/> 
+> <br/>
 > **[주의할 점]** <br/>
 > Web Server의 Security Group(보안 그룹)이 `Port 22`에 대해 Bastion Host의 Security Group or Private IP 대역을 허용해야 함 (Inbound Rule 추가해야 함)
 
