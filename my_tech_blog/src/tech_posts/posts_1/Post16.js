@@ -11,7 +11,7 @@ import postContent from '../post_content/Post16.md';
 const mdParser = new MarkdownIt({ html: true });
 mdParser.use(markdownItAttrs);
 
-const imgBaseUrl = `${process.env.REACT_APP_S3_IMG_URL}/post16`;
+const imgBaseUrl = `${process.env.REACT_APP_S3_IMG_URL}`;
 const parsedContent = postContent.replaceAll('{{imgBaseUrl}}', imgBaseUrl);
 
 const title = 'Bastion Host, Load Balancer를 이용한 EC2 접근 및 보안된 네트워크 구성하기';
