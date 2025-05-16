@@ -18,7 +18,7 @@ const Post11 = {
   slug: SlugGenerator(title),
   title: title,
   date: 'Feb, 2025',
-  tags: [''],
+  tags: ['Istio', 'Kubernetes'],
   excerpt: '이 포스팅은 클라우드 컴퓨팅의 기초적인 요소와 AWS 서비스를 훑어본다. 특히, 서비스를 설계하기 위해 필요한 기초적인 서비스를..',
   headings: HeadingExtractor(postContent),
   content: <MarkdownRenderer markdownText={postContent} /> // Render markdown using the MarkdownRenderer
@@ -27,4 +27,3 @@ const Post11 = {
 };
 
 export default Post11;
-
