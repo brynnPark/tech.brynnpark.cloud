@@ -185,6 +185,21 @@ Private Subnet에 있는 서버에 접근하기 위한 운영자 전용 SSH 중�
 ![Instances]({{imgBaseUrl}}/post16/image-2.png)  
 <br/>
 
+[Bastion 인스턴스의 Security Group 구성] <br/>
+![BastoinSG]({{imgBaseUrl}}/post16/image-2-1.png)  
+<br/>
+- 모든 SSH 통신이 가능하도록 설정했다. (좋은 방법은 아님) 정석대로라면 Admin의 IP로 한정해 허용하는 것이 맞다.
+- HTTP도 필요하지 않다면 허용하지 않는 것이 좋다. (그치만 나는 혹시몰라 설정했다.)
+
+<br/>
+
+[웹 서버 인스턴스의 Security Group 구성] <br/>
+![ServerSG]({{imgBaseUrl}}/post16/image-2-2.png)  
+<br/>
+- 서버의 경우, 중요한 것은 ALB에 부착한 SG로부터 들어오는 트래픽을 허용하는 것이다.
+- 3번째 항목에 Source가 sg-09 로 시작하는 것이 있는데, 이 sg 그룹이 ALB가 사용하는 SG이다.
+- 또한 bastion 의 접근을 허용하기 위해, 현재 VPC의 IP 대역 안에 있는 모든 트래픽에 대한 inbound를 허용했다. (좋은 방식아라고 생각하지 않는다.)
+
 ![LoadBalancer]({{imgBaseUrl}}/post16/image-3.png)  
 <br/>
 
@@ -198,12 +213,22 @@ Private Subnet에 있는 서버에 접근하기 위한 운영자 전용 SSH 중�
 ![TargetGroup]({{imgBaseUrl}}/post16/image-6.png)  
 <br/>
 
+[ALB 인스턴스의 Security Group 구성]
+![ALBSG]({{imgBaseUrl}}/post16/image-5-1.png)  
+<br/>
+
 ### 웹 서버 직접 접근 및 Bastion 접근에 따른 응답 확인
 ![TerminalCurl]({{imgBaseUrl}}/post16/image-7.png) 
 <br/>
 
 - 로컬 터미널(외부)에서 서버에 직접 접근할 때는 timeout error가 발생
 - SSH 접근을 통해 Bastion Host에 접속해 웹 서버에 접근하면 정상 응답 반환
+
+<br/>
+
+![ChromeTest]({{imgBaseUrl}}/post16/image-7-1.png) 
+<br/>
+- 단순히 외부 접근의 경우, 그냥 chrome 같은 브라우저에서도 가능 
 
 <br/>
 
